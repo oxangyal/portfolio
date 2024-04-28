@@ -2,6 +2,7 @@ import Chakra from "../assets/chakra.png";
 import { DiMysql } from "react-icons/di";
 import { FaNodeJs } from "react-icons/fa";
 import Figma from "../assets/figma.png";
+import Photoshop from "../assets/photoshop.png";
 import Python from "../assets/pyhton.png";
 import { RiReactjsLine } from "react-icons/ri";
 import { SiExpress } from "react-icons/si";
@@ -27,10 +28,7 @@ const iconVariants = (duration) => ({
 
 const Technologies = () => {
     return (
-        <div
-            id="technologies"
-            className="border-b border-neutral-800 pb-24"
-        >
+        <div id="technologies" className="border-b border-neutral-800 pb-24">
             <h1 className="my-20 text-center text-4xl">Technologies</h1>
             <div className="flex flex-wrap items-center justify-center gap-4">
                 <motion.div
@@ -120,6 +118,14 @@ const Technologies = () => {
                     className="rounded-2xl border-4 border-neutral-800 p=4 w-20 h-20"
                 >
                     <img src={Python} alt="python icon" />
+                </motion.div>
+                <motion.div
+                    variants={iconVariants(5)}
+                    initial="initial"
+                    animate="animate"
+                    className="rounded-2xl border-4 border-neutral-800 p=4 w-20 h-20"
+                >
+                    <img src={Photoshop} alt="photoshop icon" />
                 </motion.div>
             </div>
         </div>
