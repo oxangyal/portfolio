@@ -1,4 +1,4 @@
-import angeleye from "../assets/angeleyenew.png"
+import angeleye from "../assets/angeleyenew.jpg"
 import player from "../assets/player.jpg";
 import portfolio from "../assets/portfolio.jpg";
 import thrive from "../assets/thrivepr.jpg";
