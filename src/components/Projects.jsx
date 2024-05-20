@@ -77,7 +77,7 @@ const Projects = () => {
                                     href={project.front}
                                     className="text-purple-400 hover:text-purple-200"
                                 >
-                                    <p className="text-sm">GitHub</p>
+                                    <p className="text-sm">Front End</p>
                                 </a>
                             </div>
                             <div>
@@ -85,7 +85,7 @@ const Projects = () => {
                                     href={project.back}
                                     className="text-purple-400 hover:text-purple-200"
                                 >
-                                    <p className="text-sm">GitHub</p>
+                                    <p className="text-sm">Back End</p>
                                 </a>
                             </div>
                         </div>

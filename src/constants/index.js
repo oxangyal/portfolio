@@ -1,3 +1,4 @@
+import angeleye from "../assets/angeleyenew.png"
 import player from "../assets/player.jpg";
 import portfolio from "../assets/portfolio.jpg";
 import thrive from "../assets/thrivepr.jpg";
@@ -97,16 +98,16 @@ export const PROJECTS = [
     },
     {
         title: "AngelEye Photography",
-        image: portfolio,
+        image: angeleye,
         description: "Wedding/family photography and fine art website",
         technologies: [
-            "Next.js",
+            "React",
             "Tailwind",
             "Node.js",
             "MongoDB",
             "Express.js",
         ],
-        web: "https://angeleyeportfolio.netlify.app/",
+        web: "",
         front: "",
         back: "",
     },
@@ -114,6 +115,6 @@ export const PROJECTS = [
 
 export const CONTACT = {
     address: "Greater Boston Area",
-    phoneNo: "+1 339 970 0970",
+    phoneNo: "(339) 970 0970",
     email: "oxana@angeleye.net",
 };
