@@ -11,11 +11,11 @@ export const ABOUT_TEXT = `I'm a dedicated and versatile Full stack developer wi
 
 export const EXPERIENCES = [
     {
-        role: "Full Stack Developer",
+        role: "Software Engineer",
         company: "Code The Dream",
     },
     {
-        role: "Web Developer/Photographer",
+        role: "Web Developer",
         company: "AngelEye Photography",
     },
     {
@@ -57,7 +57,7 @@ export const PROJECTS = [
             "A personal full-stack application designed for people engaged in triathlon training. The platform feature is an integrated calendar to track upcoming races and allows users to customize their workouts. Users can efficiently manage their training schedules and stay informed about upcoming events. ",
         technologies: [
             "React.js",
-            "Tailwind",
+            "TailwindCSS",
             "Node.js",
             "MongoDB",
             "Express.js",
@@ -65,6 +65,16 @@ export const PROJECTS = [
         web: "https://tri-fit.vercel.app/",
         front: "https://github.com/oxangyal/tri-fit-front",
         back: "https://github.com/oxangyal/tri-fit-back",
+    },
+    {
+        title: "AngelEye Photography",
+        image: angeleye,
+        description:
+            "Wedding/family photography and fine art website, event online booking, clients access to the personal gallery.",
+        technologies: ["Next.js", "TailwindCSS"],
+        web: "https://angeleye.net/new",
+        front: "",
+        back: "",
     },
     {
         title: "Thrive Out Loud",
@@ -93,21 +103,6 @@ export const PROJECTS = [
             "My initial portfolio showcases my journey as a front-end developer, crafted with HTML, CSS, and JavaScript. It features a collection of projects highlighting my skills and creativity in web development.",
         technologies: ["HTML", "CSS", "JavaScript"],
         web: "https://angeleyeportfolio.netlify.app/",
-        front: "",
-        back: "",
-    },
-    {
-        title: "AngelEye Photography",
-        image: angeleye,
-        description: "Wedding/family photography and fine art website",
-        technologies: [
-            "React",
-            "Tailwind",
-            "Node.js",
-            "MongoDB",
-            "Express.js",
-        ],
-        web: "",
         front: "",
         back: "",
     },
