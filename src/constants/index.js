@@ -1,4 +1,5 @@
 import angeleye from "../assets/angeleyenew.jpg"
+import artsphere from "../assets/artsphere.jpg";
 import player from "../assets/player.jpg";
 import portfolio from "../assets/portfolio.jpg";
 import thrive from "../assets/thrivepr.jpg";
@@ -75,6 +76,14 @@ export const PROJECTS = [
         web: "https://angeleye.net/new",
         front: "",
         back: "",
+    },
+    {
+        title: "Art Sphere",
+        image: artsphere,
+        description:
+            "Full-stack E-commerce platform empowering a gallery owner to showcase and sell the unique creations of talented artists. Key features include a gallery managed by the owner and seamless, secure transactions powered by Stripe.",
+        technologies: ["Ruby on Rails", "Tailwind CSS", "SQLite"],
+        back: "https://github.com/oxangyal/ArtSphere",
     },
     {
         title: "Thrive Out Loud",
