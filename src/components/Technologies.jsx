@@ -5,6 +5,7 @@ import Figma from "../assets/figma.png";
 import Photoshop from "../assets/photoshop.png";
 import Python from "../assets/pyhton.png";
 import { RiReactjsLine } from "react-icons/ri";
+import Ruby from "../assets/ruby.png";
 import { SiExpress } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import { SiMui } from "react-icons/si";
@@ -126,6 +127,14 @@ const Technologies = () => {
                     className="rounded-2xl border-4 border-neutral-800 p=4 w-20 h-20"
                 >
                     <img src={Photoshop} alt="photoshop icon" />
+                </motion.div>
+                <motion.div
+                    variants={iconVariants(3)}
+                    initial="initial"
+                    animate="animate"
+                    className="rounded-2xl border-4 border-neutral-800 p=4 w-20 h-20"
+                >
+                    <img src={Ruby} alt="ruby icon" />
                 </motion.div>
             </div>
         </div>
