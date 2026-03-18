@@ -51,7 +51,7 @@ export const PROJECTS = [
         title: "OYE",
         image: oye,
         description:
-            "An application-to-person (A2P) messaging platform built for nonprofit organizations to communicate with their constituents via SMS and MMS. Features include broadcast and individual messaging, contact management with groups and tags, message templates with quick-reply dropdowns, CSV export, and cost estimation — offering a straightforward, mobile-friendly alternative to bloated CMS systems at a lower overall cost.",
+            "An application-to-person (A2P) messaging platform built for nonprofit organizations to communicate with their customers via SMS and MMS. Features include broadcast and individual messaging, contact management with groups and tags, message templates with quick-reply dropdowns, CSV export, and cost estimation — offering a straightforward, mobile-friendly alternative to bloated CMS systems at a lower overall cost.",
         technologies: ["React.js", "Ruby on Rails", "TailwindCSS", "PostgreSQL"],
         web: "https://app.oyetext.org/",
         front: "https://github.com/CodeTheDream/oyetext-backend",
