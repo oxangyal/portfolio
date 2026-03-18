@@ -18,7 +18,7 @@ export const EXPERIENCES = [
         company: "Code The Dream",
     },
     {
-        role: "Web Developer",
+        role: "Owner/Photographer",
         company: "AngelEye Photography",
     },
     {
