@@ -1,5 +1,7 @@
+import airhub from "../assets/airhub.png";
 import angeleye from "../assets/angeleyenew.jpg"
 import artsphere from "../assets/artsphere.jpg";
+import oye from "../assets/oye.png";
 import player from "../assets/player.jpg";
 import portfolio from "../assets/portfolio.jpg";
 import thrive from "../assets/thrivepr.jpg";
@@ -34,6 +36,27 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+    {
+        title: "AIRHub",
+        image: airhub,
+        description:
+            "A full-stack educational platform built for Code the Dream that delivers AI-powered code review and feedback on student assignments. Features include courses and lessons management, quiz builder, student progress tracking, and an admin dashboard — enabling mentors to automate homework evaluation and focus human review where it matters most. Students can take AI-generated quizzes and track their performance. Integrated Langfuse for monitoring and continuously improving AI response quality, accuracy, and helpfulness.",
+        technologies: ["Next.js", "MUI", "MongoDB", "Langfuse"],
+        web: "https://ai-review.codethedream.org/",
+        front: "https://github.com/CodeTheDream/ai-assignment-review",
+        back: "https://github.com/CodeTheDream/ai-assignment-review",
+    },
+
+    {
+        title: "OYE",
+        image: oye,
+        description:
+            "An application-to-person (A2P) messaging platform built for nonprofit organizations to communicate with their constituents via SMS and MMS. Features include broadcast and individual messaging, contact management with groups and tags, message templates with quick-reply dropdowns, CSV export, and cost estimation — offering a straightforward, mobile-friendly alternative to bloated CMS systems at a lower overall cost.",
+        technologies: ["React.js", "Ruby on Rails", "TailwindCSS", "PostgreSQL"],
+        web: "https://app.oyetext.org/",
+        front: "https://github.com/CodeTheDream/oyetext-backend",
+        back: "https://github.com/CodeTheDream/oyetext-backend",
+    },
     {
         title: "GetYourTutor",
         image: tutor,
