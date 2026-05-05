@@ -1,6 +1,7 @@
 import airhub from "../assets/airhub.png";
 import angeleye from "../assets/angeleyenew.jpg"
 import artsphere from "../assets/artsphere.jpg";
+import lamore from "../assets/lamore.png";
 import oye from "../assets/oye.png";
 import player from "../assets/player.jpg";
 import portfolio from "../assets/portfolio.jpg";
@@ -52,10 +53,25 @@ export const PROJECTS = [
         image: oye,
         description:
             "An application-to-person (A2P) messaging platform built for nonprofit organizations to communicate with their customers via SMS and MMS. Features include broadcast and individual messaging, contact management with groups and tags, message templates with quick-reply dropdowns, CSV export, and cost estimation — offering a straightforward, mobile-friendly alternative to bloated CMS systems at a lower overall cost.",
-        technologies: ["React.js", "Ruby on Rails", "TailwindCSS", "PostgreSQL"],
+        technologies: [
+            "React.js",
+            "Ruby on Rails",
+            "TailwindCSS",
+            "PostgreSQL",
+        ],
         web: "https://app.oyetext.org/",
         front: "https://github.com/CodeTheDream/oyetext-backend",
         back: "https://github.com/CodeTheDream/oyetext-backend",
+    },
+    {
+        title: "L'AMORE Restaurant",
+        image: lamore,
+        description:
+            "A fully responsive restaurant landing page offering a seamless dining experience built from scratch for personal project.",
+        technologies: ["React.js", "TailwindCSS"],
+        web: "https://lamore-alpha.vercel.app//",
+        front: "https://github.com/oxangyal/restaurant-landing",
+        back: "https://github.com/oxangyal/restaurant-landing",
     },
     {
         title: "GetYourTutor",
