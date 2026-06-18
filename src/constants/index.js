@@ -1,6 +1,7 @@
 import airhub from "../assets/airhub.png";
 import angeleye from "../assets/angeleyenew.jpg"
 import artsphere from "../assets/artsphere.jpg";
+import care from "../assets/care.png";
 import lamore from "../assets/lamore.png";
 import oye from "../assets/oye.png";
 import player from "../assets/player.jpg";
@@ -115,6 +116,21 @@ export const PROJECTS = [
         web: "https://angeleye.net/new",
         front: "",
         back: "",
+    },
+    {
+        title: "Care Connect",
+        image: care,
+        description:
+            "A full-stack web application designed to streamline volunteer recruitment. The platform features secure user authentication, enables direct email communication between volunteers and organizations, and provides an interactive form-based dashboard to manage active connections.",
+        technologies: [
+            "React.js",
+            "Ruby on Rails",
+            "PostgreSQL",
+            "TailwindCSS",
+        ],
+        web: "https://drive.google.com/file/d/1EqqC4ubPirfEq-2iks95pOabDM89hEan/view",
+        front: "https://github.com/Code-the-Dream-School/herring-team1/tree/dev/front-end",
+        back: "https://github.com/oxangyal/herring-team1",
     },
     {
         title: "Art Sphere",
