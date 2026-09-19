@@ -32,10 +32,10 @@ const BeforeAfterSlider = ({
                     />
                 </div>
 
-                <span className="pointer-events-none absolute left-3 top-3 rounded-md border border-red-300 bg-red-50/95 px-2 py-1 text-xs text-red-700">
+                <span className="pointer-events-none absolute left-2 top-2 sm:left-3 sm:top-3 max-w-[45%] truncate rounded-md border border-red-300 bg-red-50/95 px-2 py-1 text-[10px] sm:text-xs text-red-700">
                     {before.caption}
                 </span>
-                <span className="pointer-events-none absolute right-3 top-3 rounded-md border border-emerald-300 bg-emerald-50/95 px-2 py-1 text-xs text-emerald-700">
+                <span className="pointer-events-none absolute right-2 bottom-2 sm:right-3 sm:bottom-3 max-w-[45%] truncate rounded-md border border-emerald-300 bg-emerald-50/95 px-2 py-1 text-[10px] sm:text-xs text-emerald-700">
                     {after.caption}
                 </span>
 
