@@ -203,7 +203,6 @@ export const ANGELEYE_CASE_STUDY = {
     overview:
         "I built the first version of this site in the early 2000s: every page was painted in Photoshop, sliced, and glued back together with HTML tables and JavaScript rollovers. It served the business for years, but it was a fixed-size picture of a website - text lived inside images, nothing reflowed, and there was no way to inquire or to view a private gallery. The redesign rebuilds the same business around three jobs: look at the work, understand the pricing, and book a date.",
 
-    // --- Problem -------------------------------------------------------------
     problems: [
         {
             title: "Built for one screen size",
@@ -227,16 +226,14 @@ export const ANGELEYE_CASE_STUDY = {
         },
     ],
 
-    // --- Goals ---------------------------------------------------------------
     goals: [
         "Work on phones first, and hold up on large, high-density displays.",
-        "Let the photographs be the interface — chrome quiet, images loud.",
+        "Let the photographs be the interface - chrome quiet, images loud.",
         'Turn "contact me" into a structured booking request with event details.',
         "Give past clients a private, password-protected gallery.",
         "Keep the calm, film-like mood of the original brand while dropping the sepia clip art.",
     ],
 
-    // --- Stack ---------------------------------------------------------------
     stack: {
         legacy: [
             "Photoshop slices",
@@ -258,7 +255,6 @@ export const ANGELEYE_CASE_STUDY = {
         ],
     },
 
-    // --- Approach ------------------------------------------------------------
     approach: [
         {
             title: "Audited the old site page by page",
@@ -266,7 +262,7 @@ export const ANGELEYE_CASE_STUDY = {
         },
         {
             title: "Rewrote the navigation as real links",
-            desc: "Seven image-map hotspots became a single persistent header — Home, Gallery, Exhibitions, Pricing, Contact, Client gallery — with real text, keyboard focus and a visible current state.",
+            desc: "Seven image-map hotspots became a single persistent header - Home, Gallery, Exhibitions, Pricing, Contact, Client gallery - with real text, keyboard focus and a visible current state.",
         },
         {
             title: "Designed one gallery system instead of six pages",
@@ -286,7 +282,6 @@ export const ANGELEYE_CASE_STUDY = {
         },
     ],
 
-    // --- Journeys ------------------------------------------------------------
     userJourney: {
         legacy: [
             { id: 1, label: "Splash page" },
@@ -459,15 +454,15 @@ export const ANGELEYE_CASE_STUDY = {
 export const LAMORE_CASE_STUDY = {
     title: "L'Amore Restaurant",
     subtitle:
-        "Turning a four-week take-home assignment into a mobile-first site people actually book from",
-    role: "Sole designer & developer — research, UX, UI, frontend",
-    timeline: "4-week take-home assignment · 2025",
-    client: "Personal project — originally a technical assignment for a developer interview",
+        "Turning a two-week take-home assignment into a mobile-first site people actually book from",
+    role: "Sole designer & developer - research, UX, UI, frontend",
+    timeline: "2-week take-home assignment · 2026",
+    client: "Personal project - originally a technical assignment for a developer interview",
     liveUrl: "https://lamore-alpha.vercel.app/",
     repoUrl: "https://github.com/oxangyal/restaurant-landing",
 
     overview:
-        "This started as a take-home assignment while interviewing for a developer role. The brief was narrow: a digital business card for a restaurant — show the menu with prices, let people book a table, nothing more. Mobile was called out as the priority. I used the four weeks to also test what a brief like that usually leaves out.",
+        "This started as a take-home assignment while interviewing for a developer role. The brief was narrow: a digital business card for a restaurant - show the menu with prices, let people book a table, nothing more. Mobile was called out as the priority. I used the four weeks to also test what a brief like that usually leaves out.",
 
     brief: {
         required: [
@@ -484,7 +479,7 @@ export const LAMORE_CASE_STUDY = {
     },
 
     research:
-        "I'm part of a book club, and picking where we meet is its own small negotiation every month - six people with different budgets, diets and \"vibes\" they're after. Before building this, I asked three club members what actually decides where we land: can they see the menu and prices without calling, can they picture what the place looks like, and would they trust it based on what other people said. None of that was in the brief. That's where the atmosphere gallery and testimonials came from - not scope creep, but two questions the brief itself didn't answer.",
+        "I’m part of a book club where picking a meeting spot every few weeks is always a negotiation - eight people, all with different budgets, dietary needs, and vibe preferences. Before writing a single line of code, I asked three members what actually drives their decision when booking a new place. Their answers boiled down to three things: clear menu pricing without having to call, a feel for the physical atmosphere, and social proof from other diners. The original brief didn't cover any of this. Adding the gallery and reviews wasn't about adding extra features - it was about answering what people actually needed to know. ",
 
     approach: [
         {
@@ -536,12 +531,12 @@ export const LAMORE_CASE_STUDY = {
             desktop: {
                 src: lamoreMenuDesktop,
                 alt: "L'Amore desktop menu page with a two-column grid of dishes under tabs",
-                caption: "Desktop — two-column grid",
+                caption: "Desktop - two-column grid",
             },
             mobile: {
                 src: lamoreMenuMobile,
                 alt: "L'Amore mobile menu page with dishes stacked in a single column",
-                caption: "Mobile — single column, thumb-scrollable",
+                caption: "Mobile - single column, thumb-scrollable",
             },
         },
         {
@@ -551,27 +546,27 @@ export const LAMORE_CASE_STUDY = {
             desktop: {
                 src: lamoreLocation,
                 alt: "L'Amore desktop location page with an embedded map and address",
-                caption: "Desktop — embedded map, address, hours",
+                caption: "Desktop - embedded map, address, hours",
             },
             mobile: {
                 src: lamoreLocationMobile,
                 alt: "L'Amore mobile location page with an embedded map and Open in Maps button",
-                caption: "Mobile — one-tap Open in Maps",
+                caption: "Mobile - one-tap Open in Maps",
             },
         },
         {
             id: "reserve",
             aspect: "Reserve",
-            note: "The same reservation fields on both, but the mobile form is the one that matters — it's reachable from a pinned CTA on every screen.",
+            note: "The same reservation fields on both, but the mobile form is the one that matters - it's reachable from a pinned CTA on every screen.",
             desktop: {
                 src: lamoreReserve,
                 alt: "L'Amore desktop reservation form",
-                caption: "Desktop — full reservation form",
+                caption: "Desktop - full reservation form",
             },
             mobile: {
                 src: lamoreReserveMobile,
                 alt: "L'Amore mobile reservation form",
-                caption: "Mobile — reachable from a pinned CTA",
+                caption: "Mobile - reachable from a pinned CTA",
             },
         },
     ],
@@ -580,12 +575,12 @@ export const LAMORE_CASE_STUDY = {
         {
             title: "Atmosphere gallery",
             image: lamoreAtmosphere,
-            desc: "Swipeable interior shots (dining hall, private lounge, patio) — added after research showed people want to see the space before booking, especially for groups.",
+            desc: "Swipeable interior shots (dining hall, private lounge, patio) - added after research showed people want to see the space before booking, especially for groups.",
         },
         {
             title: "Testimonials",
             image: lamoreTestimonials,
-            desc: "A carousel with one featured, starred review up front — social proof without a wall of quotes.",
+            desc: "A carousel with one featured, starred review up front - social proof without a wall of quotes.",
         },
     ],
 
@@ -607,7 +602,7 @@ export const AIRHUB_CASE_STUDY = {
     subtitle:
         "From a single-purpose Intro reviewer to a multi-course platform - leading the home page redesign and rebrand from inside the dev team",
     role: "Joined as a developer, then led the redesign of the home page and rebrand - research, UX, UI, implementation",
-    timeline: "~3 months · Code the Dream",
+    timeline: "~6 months · Code the Dream",
     client: "Code the Dream",
     liveUrl: "https://ai-review.codethedream.org/",
     repoUrl: "https://github.com/CodeTheDream/ai-assignment-review",
