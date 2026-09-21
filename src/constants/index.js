@@ -201,7 +201,7 @@ export const ANGELEYE_CASE_STUDY = {
     client: "AngelEye Photography (my own studio)",
 
     overview:
-        "I built the first version of this site in the early 2000s: every page was painted in Photoshop, sliced, and glued back together with HTML tables and JavaScript rollovers. It served the business for years, but it was a fixed-size picture of a website - text lived inside images, nothing reflowed, and there was no way to inquire or to view a private gallery. The redesign rebuilds the same business around three jobs: look at the work, understand the pricing, and book a date.",
+        "I built the first version of this site in the early 2000s: every page was done in Photoshop, cut, and glued back together with HTML tables and JavaScript rollovers. It served the business for years, but it was a fixed-size picture of a website, text lived inside images, nothing reflowed, and there was no way to inquire or to view a private gallery. The redesign rebuilds the same business around three jobs: look at the work, understand the pricing, and book a date.",
 
     problems: [
         {
@@ -214,7 +214,7 @@ export const ANGELEYE_CASE_STUDY = {
         },
         {
             title: "Browsing cost too many clicks",
-            desc: "Reaching one wedding photo meant category → sub-category → thumbnail index → full page reload. Each step was a separate hand-made page, so adding a shoot meant editing HTML by hand.",
+            desc: "Reaching one wedding photo meant category to sub-category to thumbnail index to full page reload. Each step was a separate hand-made page, so adding a shoot meant editing HTML by hand.",
         },
         {
             title: "No way to start a booking",
@@ -278,7 +278,7 @@ export const ANGELEYE_CASE_STUDY = {
         },
         {
             title: "Kept the scope honest",
-            desc: "Weddings carry the business, so the wedding gallery was rebuilt first. Portraits and Fine Art still run on the legacy content and are the next migration - a deliberate staged rollout, not an oversight.",
+            desc: "Weddings carry the business, so the wedding gallery was rebuilt first. Portraits and Fine Art still run on the legacy content and are the next migration, a deliberate staged rollout, not an oversight.",
         },
     ],
 
@@ -446,7 +446,7 @@ export const ANGELEYE_CASE_STUDY = {
     ],
 
     reflection:
-        "The hardest part was not the code. It was accepting that a layout I had drawn pixel by pixel in Photoshop was the thing standing in the way - the design was a picture, and a picture cannot respond, cannot be read aloud and cannot be edited by anyone but its author. Rebuilding it as a system meant giving up total control of every pixel in exchange for a site that adapts to whoever opens it.",
+        "The hardest part was not the code. It was accepting that a layout I had drawn pixel by pixel in Photoshop was the thing standing in the way, the design was a picture, and a picture cannot respond, cannot be read aloud and cannot be edited by anyone but its author. Rebuilding it as a system meant giving up total control of every pixel in exchange for a site that adapts to whoever opens it.",
 };
 
 //------------LAMORE_CASE_STUDY----------------------------------
@@ -457,12 +457,12 @@ export const LAMORE_CASE_STUDY = {
         "Turning a two-week take-home assignment into a mobile-first site people actually book from",
     role: "Sole designer & developer - research, UX, UI, frontend",
     timeline: "2-week take-home assignment · 2026",
-    client: "Personal project - originally a technical assignment for a developer interview",
+    client: "Personal project, it was originally a technical assignment for a developer interview",
     liveUrl: "https://lamore-alpha.vercel.app/",
     repoUrl: "https://github.com/oxangyal/restaurant-landing",
 
     overview:
-        "This started as a take-home assignment while interviewing for a developer role. The brief was narrow: a digital business card for a restaurant - show the menu with prices, let people book a table, nothing more. Mobile was called out as the priority. I used the four weeks to also test what a brief like that usually leaves out.",
+        "This started as a take-home assignment while interviewing for a developer role. The brief was narrow: a digital business card for a restaurant, show the menu with prices, let people book a table, nothing more. Mobile was called out as the priority. I used the four weeks to also test what a brief like that usually leaves out.",
 
     brief: {
         required: [
@@ -479,16 +479,16 @@ export const LAMORE_CASE_STUDY = {
     },
 
     research:
-        "I’m part of a book club where picking a meeting spot every few weeks is always a negotiation - eight people, all with different budgets, dietary needs, and vibe preferences. Before writing a single line of code, I asked three members what actually drives their decision when booking a new place. Their answers boiled down to three things: clear menu pricing without having to call, a feel for the physical atmosphere, and social proof from other diners. The original brief didn't cover any of this. Adding the gallery and reviews wasn't about adding extra features - it was about answering what people actually needed to know. ",
+        "I’m part of a book club where picking a meeting spot every few weeks is always a negotiation - eight people, all with different budgets, dietary needs, and vibe preferences. Before writing a single line of code, I asked three members what actually drives their decision when booking a new place. Their answers boiled down to three things: clear menu pricing without having to call, a feel for the physical atmosphere, and social proof from other diners. The original brief didn't cover any of this. Adding the gallery and reviews wasn't about adding extra features, it was about answering what people actually needed to know. ",
 
     approach: [
         {
             title: "Made the CTA impossible to lose",
-            desc: "The Reserve button stays visible on every screen, on both desktop and mobile — booking shouldn't require scrolling back to find it.",
+            desc: "The Reserve button stays visible on every screen, on both desktop and mobile, so booking shouldn't require scrolling back to find it.",
         },
         {
             title: "Split the menu into tabs",
-            desc: "Starters, Main Course, Salads, Desserts, Drinks as tabs instead of one long scroll - lets someone jump straight to what they came to check, like dietary options or price range.",
+            desc: "Starters, Main Course, Salads, Desserts, Drinks as tabs instead of one long scroll, lets someone jump straight to what they came to check, like dietary options or price range.",
         },
         {
             title: "Gave the space a face",
@@ -500,7 +500,7 @@ export const LAMORE_CASE_STUDY = {
         },
         {
             title: "Built mobile first, not mobile-adapted",
-            desc: "Navigation collapses into a burger menu, the Reserve CTA stays pinned, and the gallery becomes swipeable - designed for a phone first, then scaled up.",
+            desc: "Navigation collapses into a burger menu, the Reserve CTA stays pinned, and the gallery becomes swipeable, it was designed for a phone first, then scaled up.",
         },
         {
             title: "Made location a decision, not a lookup",
@@ -600,20 +600,20 @@ export const LAMORE_CASE_STUDY = {
 export const AIRHUB_CASE_STUDY = {
     title: "AIRHub",
     subtitle:
-        "From a single-purpose Intro reviewer to a multi-course platform - leading the home page redesign and rebrand from inside the dev team",
+        "From a single-purpose Intro reviewer to a multi-course platform, leading the home page redesign and rebrand from inside the dev team",
     role: "Joined as a developer, then led the redesign of the home page and rebrand - research, UX, UI, implementation",
-    timeline: "~6 months · Code the Dream",
+    timeline: "aroud 6 months · Code the Dream",
     client: "Code the Dream",
     liveUrl: "https://ai-review.codethedream.org/",
     repoUrl: "https://github.com/CodeTheDream/ai-assignment-review",
 
     overview:
-        "AIRHub started as AI Reviewer, a single-page app built to review one thing: Intro-class assignments. CTD's program already spanned multiple tracks - Python, React, Ruby on Rails, Node and more - but the tool itself only worked for Intro, and there was no way for staff to add a course, adjust it, see how students and mentors were using it, or act on feedback. I joined the project as a developer, and as the platform grew to support every track plus student, mentor and admin roles, I ended up leading the redesign and rebrand of the home page - new navigation, new information architecture, a new name, and a new logo.",
+        "AIRHub started as AI Reviewer, a single-page app built to review one thing: Intro-course assignments. CTD's program already spanned multiple tracks - Python, React, Ruby on Rails, Node courses, but the tool itself only worked for Intro, and there was no way for staff to add a course, adjust it, see how students and mentors were using it, or act on feedback. I joined the project as a developer, and as the platform grew to support every track plus student, mentor and admin roles, I ended up leading the redesign and rebrand of the home page: new navigation, new information architecture, a new name, and a updated logo.",
 
     problems: [
         {
             title: "Feedback was barely visible",
-            desc: "The AI's review sat at the bottom of the page, below the fold - the one thing the student actually came for was the easiest thing to miss.",
+            desc: "The AI's review sat at the bottom of the page, below the fold, the one thing the student actually came for was the easiest thing to miss.",
         },
         {
             title: "Chat took the prime spot for a secondary feature",
@@ -625,7 +625,7 @@ export const AIRHUB_CASE_STUDY = {
         },
         {
             title: "The structure only worked for one course",
-            desc: "Code the Dream already ran multiple tracks - Python, React, Ruby on Rails, Node and more - but the tool was wired to review only Intro assignments. There was no admin layer to manage courses, or see how students and mentors were actually using it - every addition meant rebuilding the page, not configuring it.",
+            desc: "CTD already ran multiple tracks - Python, React, Ruby on Rails, Node courses, but the tool was wired to review only Intro assignments. There was no admin layer to manage courses, or see how students and mentors were actually using it, every addition meant rebuilding the page, not configuring it.",
         },
         ,
     ],
@@ -633,7 +633,7 @@ export const AIRHUB_CASE_STUDY = {
     approach: [
         {
             title: "Added top navigation built to scale by course",
-            desc: "A course selector at the top reveals a lesson dropdown underneath it - adding a new course track is a data change, not a new page.",
+            desc: "A course selector at the top reveals a lesson dropdown underneath it, adding a new course track is a data change, not a new page.",
         },
         {
             title: "Gave feedback the space it deserved",
@@ -645,27 +645,27 @@ export const AIRHUB_CASE_STUDY = {
         },
         {
             title: "Made file selection visible",
-            desc: "Moved it out of the cramped strip above feedback and into a clear, dedicated spot on the left - usable even when a submission has several files.",
+            desc: "Moved it out of the cramped strip above feedback and into a clear, dedicated spot on the left, usable even when a submission has several files.",
         },
         {
             title: "Built the sidebar to hold admin tools as they're added",
-            desc: "Chat, Cohorts, Students, Prework Analyzer, Feedback Testing and Langfuse all live in the same left navigation - a pattern that scales as more admin features get added, not a one-off list.",
+            desc: "Chat, Cohorts, Students, Prework Analyzer, Feedback Testing and Langfuse all live in the same left navigation, a pattern that scales as more admin features get added, not a one-off list.",
         },
         {
             title: "Built room for mentor and student roles",
-            desc: "The platform outgrew being a single reviewing tool — mentors need to review submissions and track cohorts, students need to take quizzes and see their own progress. The new navigation gives each its own space instead of forcing everyone through the same single view.",
+            desc: "The platform outgrew being a single reviewing tool - mentors need to review submissions and track cohorts, students need to take quizzes and see their own progress. The new navigation gives each its own space instead of forcing everyone through the same single view.",
         },
         {
             title: "Moved Help next to where people actually get stuck",
-            desc: "The Help toggle moved from the bottom of the page to sit right next to the lesson selector and assignment link input - the exact spot where questions about the assignment come up, instead of a fixed nav position unrelated to the task.",
+            desc: "The Help toggle moved from the bottom of the page to sit right next to the lesson selector and assignment link input, the exact spot where questions about the assignment come up, instead of a fixed nav position unrelated to the task.",
         },
         {
             title: "Kept it desktop-only on purpose",
-            desc: "Reviewing code and reading detailed AI feedback isn't something people do well on a phone. The layout is responsive across desktop and laptop widths, but there's no phone-optimized version — that would solve a problem nobody actually has here.",
+            desc: "Reviewing code and reading detailed AI feedback isn't something people do well on a phone. The layout is responsive across desktop and laptop widths, but there's no phone-optimized version,  that would solve a problem nobody actually has here.",
         },
         {
             title: "Led the rebrand from AI Reviewer to AIRHub",
-            desc: "The old name described one feature; the product had become a hub for multiple courses and admin, mentor and students tools. Renamed it and designed the new logo to match.",
+            desc: "The old name described one feature; the product had become a hub for multiple courses and admin, mentor and students tools. Renamed it and redesigned the logo to match.",
         },
     ],
 
@@ -688,7 +688,7 @@ export const AIRHUB_CASE_STUDY = {
             aspect: "Course structure",
             legacy: "Built for one course (Intro); no way to add Python, React, Ruby on Rails or Node courses without redesigning the page.",
             redesign:
-                "Top navigation with a course dropdown that reveals lessons - new courses are a data change.",
+                "Top navigation with a course dropdown that reveals lessons, new courses are a data change.",
         },
         {
             id: 2,
@@ -720,7 +720,7 @@ export const AIRHUB_CASE_STUDY = {
             aspect: "Help",
             legacy: "A toggle at the bottom of the page, disconnected from the task.",
             redesign:
-                "Placed next to the lesson selector and assignment input - right where questions actually come up.",
+                "Placed next to the lesson selector and assignment input, right where questions actually come up.",
         },
         {
             id: 8,
