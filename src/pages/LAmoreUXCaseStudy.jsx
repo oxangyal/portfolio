@@ -22,6 +22,7 @@ const LAmoreUXCaseStudy = () => {
         highlights,
         outcomes,
         reflection,
+        visualDesign,
     } = LAMORE_CASE_STUDY;
 
     const [activeShot, setActiveShot] = useState(screenshots[0].id);
@@ -39,7 +40,9 @@ const LAmoreUXCaseStudy = () => {
                     <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-3">
                         {title}
                     </h1>
-                    <p className={`text-lg ${caseStudyText.muted} mb-5 max-w-2xl`}>
+                    <p
+                        className={`text-lg ${caseStudyText.muted} mb-5 max-w-2xl`}
+                    >
                         {subtitle}
                     </p>
                     <div className="flex flex-wrap gap-x-8 gap-y-2 text-purple-700 text-sm md:text-base font-medium mb-5">
@@ -48,7 +51,9 @@ const LAmoreUXCaseStudy = () => {
                             {role}
                         </p>
                         <p>
-                            <span className={caseStudyText.label}>Timeline:</span>{" "}
+                            <span className={caseStudyText.label}>
+                                Timeline:
+                            </span>{" "}
                             {timeline}
                         </p>
                         <p>
@@ -58,8 +63,8 @@ const LAmoreUXCaseStudy = () => {
                     </div>
                     <div className="flex flex-wrap gap-3">
                         {liveUrl && (
-                            
-                                <a href={liveUrl}
+                            <a
+                                href={liveUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-4 py-2 rounded-lg text-sm font-medium bg-purple-600 text-white hover:bg-purple-700 transition-colors"
@@ -68,8 +73,8 @@ const LAmoreUXCaseStudy = () => {
                             </a>
                         )}
                         {repoUrl && (
-                            
-                            <a href={repoUrl}
+                            <a
+                                href={repoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-4 py-2 rounded-lg text-sm font-medium border border-neutral-200 text-neutral-700 hover:border-neutral-300 hover:text-neutral-900 transition-colors"
@@ -81,7 +86,9 @@ const LAmoreUXCaseStudy = () => {
                 </motion.header>
 
                 <Section title="Overview">
-                    <p className={`${caseStudyText.body} text-lg leading-relaxed bg-neutral-50 p-6 rounded-xl border border-neutral-200`}>
+                    <p
+                        className={`${caseStudyText.body} text-lg leading-relaxed bg-neutral-50 p-6 rounded-xl border border-neutral-200`}
+                    >
                         {overview}
                     </p>
                 </Section>
@@ -89,7 +96,9 @@ const LAmoreUXCaseStudy = () => {
                 <Section title="The brief vs. what I shipped">
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-neutral-50 p-6 rounded-xl border border-neutral-200">
-                            <h3 className={`text-lg font-medium ${caseStudyText.label} mb-4`}>
+                            <h3
+                                className={`text-lg font-medium ${caseStudyText.label} mb-4`}
+                            >
                                 Asked for
                             </h3>
                             <ul className="space-y-2">
@@ -129,7 +138,9 @@ const LAmoreUXCaseStudy = () => {
                 </Section>
 
                 <Section title="Research">
-                    <blockquote className={`border-l-4 border-purple-500 pl-5 ${caseStudyText.body} text-lg leading-relaxed italic bg-neutral-50 p-6 rounded-xl`}>
+                    <blockquote
+                        className={`border-l-4 border-purple-500 pl-5 ${caseStudyText.body} text-lg leading-relaxed italic bg-neutral-50 p-6 rounded-xl`}
+                    >
                         {research}
                     </blockquote>
                 </Section>
@@ -144,9 +155,43 @@ const LAmoreUXCaseStudy = () => {
                                 <h3 className="text-lg font-semibold text-purple-700 mb-2">
                                     {item.title}
                                 </h3>
-                                <p className={`${caseStudyText.secondary} text-sm leading-relaxed`}>
+                                <p
+                                    className={`${caseStudyText.secondary} text-sm leading-relaxed`}
+                                >
                                     {item.desc}
                                 </p>
+                            </div>
+                        ))}
+                    </div>
+                </Section>
+
+                <Section title="Visual design: color & system">
+                    <p
+                        className={`${caseStudyText.body} text-base leading-relaxed mb-6`}
+                    >
+                        {visualDesign.intro}
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                        {visualDesign.choices.map((item) => (
+                            <div
+                                key={item.title}
+                                className="flex gap-4 bg-neutral-50 border border-neutral-200 rounded-xl p-5"
+                            >
+                                <span
+                                    className="mt-1 h-8 w-8 flex-shrink-0 rounded-full border border-neutral-200 shadow-sm"
+                                    style={{ backgroundColor: item.swatch }}
+                                    aria-hidden="true"
+                                />
+                                <div>
+                                    <h3 className="text-sm font-semibold text-purple-700 mb-1">
+                                        {item.title}
+                                    </h3>
+                                    <p
+                                        className={`${caseStudyText.secondary} text-sm leading-relaxed`}
+                                    >
+                                        {item.desc}
+                                    </p>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -166,7 +211,9 @@ const LAmoreUXCaseStudy = () => {
                                     key={step}
                                     className="flex flex-col items-center gap-2"
                                 >
-                                    <div className={`w-full rounded-lg border border-neutral-200 bg-white px-3 py-3 text-center text-sm ${caseStudyText.secondary}`}>
+                                    <div
+                                        className={`w-full rounded-lg border border-neutral-200 bg-white px-3 py-3 text-center text-sm ${caseStudyText.secondary}`}
+                                    >
                                         {step}
                                     </div>
                                     <span
@@ -181,7 +228,9 @@ const LAmoreUXCaseStudy = () => {
                         <div className="mt-1 rounded-lg border border-purple-300 bg-purple-50 px-4 py-3 text-center text-sm font-medium text-purple-700">
                             Reserve a Table — one tap away from anywhere
                         </div>
-                        <p className={`${caseStudyText.secondary} text-sm leading-relaxed mt-4`}>
+                        <p
+                            className={`${caseStudyText.secondary} text-sm leading-relaxed mt-4`}
+                        >
                             Every screen leads back to the same CTA — there's no
                             page where booking is more than one tap away.
                         </p>
@@ -231,7 +280,9 @@ const LAmoreUXCaseStudy = () => {
                             </div>
                         </div>
 
-                        <p className={`${caseStudyText.secondary} text-sm leading-relaxed mt-5`}>
+                        <p
+                            className={`${caseStudyText.secondary} text-sm leading-relaxed mt-5`}
+                        >
                             {shot.note}
                         </p>
                     </div>
@@ -253,7 +304,9 @@ const LAmoreUXCaseStudy = () => {
                                     <h3 className="text-base font-semibold text-purple-700 mb-2">
                                         {item.title}
                                     </h3>
-                                    <p className={`${caseStudyText.secondary} text-sm leading-relaxed`}>
+                                    <p
+                                        className={`${caseStudyText.secondary} text-sm leading-relaxed`}
+                                    >
                                         {item.desc}
                                     </p>
                                 </figcaption>
@@ -263,7 +316,9 @@ const LAmoreUXCaseStudy = () => {
                 </Section>
 
                 <Section title="Outcome">
-                    <ul className={`space-y-2 text-sm ${caseStudyText.body} leading-relaxed bg-neutral-50 border border-neutral-200 rounded-xl p-6`}>
+                    <ul
+                        className={`space-y-2 text-sm ${caseStudyText.body} leading-relaxed bg-neutral-50 border border-neutral-200 rounded-xl p-6`}
+                    >
                         {outcomes.map((item) => (
                             <li key={item} className="flex gap-2">
                                 <span
@@ -279,7 +334,9 @@ const LAmoreUXCaseStudy = () => {
                 </Section>
 
                 <Section title="What I took from it">
-                    <blockquote className={`border-l-4 border-purple-500 pl-5 ${caseStudyText.body} text-lg leading-relaxed italic`}>
+                    <blockquote
+                        className={`border-l-4 border-purple-500 pl-5 ${caseStudyText.body} text-lg leading-relaxed italic`}
+                    >
                         {reflection}
                     </blockquote>
                 </Section>

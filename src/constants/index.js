@@ -254,6 +254,64 @@ export const ANGELEYE_CASE_STUDY = {
             "Structured inquiry form",
         ],
     },
+    visualDesign: {
+        intro: "The old site used a warm sepia wash with clip-art florals and drop shadows on nearly everything, decorative choices that made sense on a bridal template in 2002, but competed with the photography instead of framing it. The redesign strips that back so the only color on the page comes from the work itself.",
+        choices: [
+            {
+                title: "Near-black neutral ground",
+                swatch: "#0A0A0B",
+                desc: "A dark, low-saturation background reads as a gallery wall, not a themed template, photographs carry all the color and contrast.",
+            },
+            {
+                title: "Single gold accent",
+                swatch: "#C9A25C",
+                desc: "One warm gold, used sparingly for the logotype and key links, a quiet nod to the brand without competing with any photograph on the page.",
+            },
+            {
+                title: "Dropped decorative elements entirely",
+                swatch: "#2A2A2E",
+                desc: "No clip-art, no drop shadows, no sepia overlay, borders and cards use flat, low-contrast neutrals so the eye goes to the photography first.",
+            },
+            {
+                title: "Contrast checked against the dark ground",
+                swatch: "#E8E8E6",
+                desc: "Body text sits at a contrast ratio well above WCAG AA on the near-black background, legible without the glare of a pure white page.",
+            },
+        ],
+    },
+
+    sitemap: {
+        note: "The legacy site nested Portfolio into three separate category pages, each with its own thumbnail index — effectively doubling the click depth to reach a single photo. The redesign flattens that into one Gallery page, so the site does more with fewer total pages.",
+        legacy: {
+            label: "AngelEye - legacy (7 pages, 3 levels deep)",
+            nodes: [
+                { label: "Home / splash" },
+                { label: "Philosophy" },
+                {
+                    label: "Portfolio",
+                    children: [
+                        { label: "Weddings" },
+                        { label: "Portraits" },
+                        { label: "Fine Arts" },
+                    ],
+                },
+                { label: "Pricing" },
+                { label: "Contact" },
+                { label: "Client images (dead link)" },
+            ],
+        },
+        redesign: {
+            label: "AngelEye - redesign (6 pages, 1 level deep)",
+            nodes: [
+                { label: "Home" },
+                { label: "Gallery" },
+                { label: "Exhibitions" },
+                { label: "Pricing" },
+                { label: "Contact / booking request" },
+                { label: "Client gallery (password-gated)" },
+            ],
+        },
+    },
 
     approach: [
         {
@@ -277,8 +335,8 @@ export const ANGELEYE_CASE_STUDY = {
             desc: "Email and password sign-in gives each couple a permanent place to view their photographs, separate from the public portfolio.",
         },
         {
-            title: "Kept the scope honest",
-            desc: "Weddings carry the business, so the wedding gallery was rebuilt first. Portraits and Fine Art still run on the legacy content and are the next migration, a deliberate staged rollout, not an oversight.",
+            title: "Rebuilt the highest-impact gallery first",
+            desc: "Weddings carry the business, so that's where the new gallery system launched firs, proving the pattern before expanding it further.",
         },
     ],
 
@@ -479,7 +537,22 @@ export const LAMORE_CASE_STUDY = {
     },
 
     research:
-        "I’m part of a book club where picking a meeting spot every few weeks is always a negotiation - eight people, all with different budgets, dietary needs, and vibe preferences. Before writing a single line of code, I asked three members what actually drives their decision when booking a new place. Their answers boiled down to three things: clear menu pricing without having to call, a feel for the physical atmosphere, and social proof from other diners. The original brief didn't cover any of this. Adding the gallery and reviews wasn't about adding extra features, it was about answering what people actually needed to know. ",
+        "I'm part of a book club where picking a meeting spot every few weeks is always a negotiation — eight people, all with different budgets, dietary needs, and vibe preferences. Before writing a single line of code, I asked three members a few questions about how they actually decide where to book a place they haven't been to before.",
+
+    researchQuestions: [
+        "What's the first thing you check before agreeing to a new restaurant?",
+        "What makes you hesitate to book somewhere you've never been?",
+        "What convinces you a place is worth trying?",
+    ],
+
+    researchFindings: [
+        "Pricing needed to be visible up front — nobody wanted to call just to ask.",
+        "Seeing the room mattered, especially when booking for a group with different expectations.",
+        "A stranger's experience carried more weight than the restaurant's own description of itself.",
+    ],
+
+    researchConclusion:
+        "The original brief didn't cover any of this. The interior gallery and testimonials weren't extra features — they were answers to what people actually needed to know before they'd commit.",
 
     approach: [
         {
@@ -507,6 +580,32 @@ export const LAMORE_CASE_STUDY = {
             desc: "An embedded, interactive map with an 'Open in Maps' shortcut instead of a static address line.",
         },
     ],
+
+    visualDesign: {
+        intro: "The palette leans on cues from Italian fine dining rather than a generic restaurant template, the goal was for color to come from the food and the room, not the interface.",
+        choices: [
+            {
+                title: "Charcoal & navy ground",
+                swatch: "#12131A",
+                desc: "Keeps the frame dark and out of the way, so food and interior photography carry the color instead of UI chrome.",
+            },
+            {
+                title: "Gold accent & logotype",
+                swatch: "#D4AF37",
+                desc: "Signals warmth and quality without reading as a discount coupon, matches the gold logotype used across the brand.",
+            },
+            {
+                title: "Solid gold Reserve button",
+                swatch: "#E8B84B",
+                desc: "The one warm, filled, high-contrast element on every screen, deliberately different from the outlined 'Our Menu' button, so the primary action is never ambiguous.",
+            },
+            {
+                title: "Contrast checked on dark ground",
+                swatch: "#F5F5F0",
+                desc: "Verified the gold-on-charcoal pairing against WCAG AA contrast minimums, a combination that's easy to get wrong on a dark background.",
+            },
+        ],
+    },
 
     screenshots: [
         {
@@ -592,7 +691,7 @@ export const LAMORE_CASE_STUDY = {
     ],
 
     reflection:
-        "The brief asked for a business card. What people actually needed before booking somewhere new was three answers: what's on the menu, what does it look like, and can I trust it. That gap between technically meeting a spec and actually answering the person's question is the one I keep checking for in every brief since.",
+        "The initial brief asked for a basic business card site, but I wanted to build something people would actually use. To book a table, you need to make a quick decision, right? So you need to see the menu with prices, check out what the place looks like inside, and know exactly where it is.Since most people do this on their phones, I designed everything mobile-first. I made sure the reservation button is always right there on every single screen, so you never have to hunt for it. And instead of just typing out a static address, I dropped in an interactive map. That way, users don't have to copy and paste anything, they can just click, see the route, and instantly decide if they want to go. This project really showed me how much a few smart features can make the whole experience fast and easy for real people.",
 };
 
 //----------- AIRHUB_CASE_STUDY----------------------------------------
@@ -608,7 +707,7 @@ export const AIRHUB_CASE_STUDY = {
     repoUrl: "https://github.com/CodeTheDream/ai-assignment-review",
 
     overview:
-        "AIRHub started as AI Reviewer, a single-page app built to review one thing: Intro-course assignments. CTD's program already spanned multiple tracks - Python, React, Ruby on Rails, Node courses, but the tool itself only worked for Intro, and there was no way for staff to add a course, adjust it, see how students and mentors were using it, or act on feedback. I joined the project as a developer, and as the platform grew to support every track plus student, mentor and admin roles, I ended up leading the redesign and rebrand of the home page: new navigation, new information architecture, a new name, and a updated logo.",
+        "AIRHub started as AI Reviewer, a single-page app built to review one thing: Intro-course assignments. CTD's program already spanned multiple tracks - Python, React, Ruby on Rails, Node courses, but the tool itself only worked for Intro, and there was no way for staff to add a course, adjust it, see how students and mentors were using it, or act on feedback. I joined the project as a developer, and as the platform grew to support every track plus student, mentor and admin roles, I ended up leading the redesign and rebrand of the home page: new navigation, new information architecture, a new name.",
 
     problems: [
         {
@@ -662,10 +761,6 @@ export const AIRHUB_CASE_STUDY = {
         {
             title: "Kept it desktop-only on purpose",
             desc: "Reviewing code and reading detailed AI feedback isn't something people do well on a phone. The layout is responsive across desktop and laptop widths, but there's no phone-optimized version,  that would solve a problem nobody actually has here.",
-        },
-        {
-            title: "Led the rebrand from AI Reviewer to AIRHub",
-            desc: "The old name described one feature; the product had become a hub for multiple courses and admin, mentor and students tools. Renamed it and redesigned the logo to match.",
         },
     ],
 
@@ -723,13 +818,6 @@ export const AIRHUB_CASE_STUDY = {
                 "Placed next to the lesson selector and assignment input, right where questions actually come up.",
         },
         {
-            id: 8,
-            aspect: "Branding",
-            legacy: '"AI Reviewer" - described one feature.',
-            redesign:
-                '"AIRHub", with a new logo - describes what it actually became.',
-        },
-        {
             id: 9,
             aspect: "Roles",
             legacy: "One view for everyone; no distinction between student, mentor and admin.",
@@ -742,7 +830,6 @@ export const AIRHUB_CASE_STUDY = {
         "The same navigation pattern now supports Python, React, Ruby on Rails, Node and Intro tracks without a page redesign per course.",
         "Feedback is visible without hunting for it.",
         "Admin tools have a consistent home that scales as more get added.",
-        "The rename and new logo reflect what the product does now, not what it did at launch.",
     ],
 
     nextSteps: [
@@ -750,7 +837,7 @@ export const AIRHUB_CASE_STUDY = {
     ],
 
     reflection:
-        "I joined this project to write code, not to redesign it. The task became a full redesign because the product had outgrown its layout, not because anyone asked for a visual refresh. That's a different kind of design work than starting from a blank page - every decision had to work for people already using the tool, while making room for courses and features that didn't exist yet when the original was built.",
+        "Although I came on board as a developer, my first big task evolved into a major layout redesign. The inherited structure hadn’t been fully planned out for the long run, and the layout was holding the product back from properly supporting its content.I really enjoyed this process because it wasn't just a visual refresh, it was a puzzle of how to seamlessly fit in courses and features. It required careful balancing to ensure a smooth transition for our existing users while unlocking the platform's new potential.",
 };
 // ---------------------------------------------------------------
 

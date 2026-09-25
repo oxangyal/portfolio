@@ -23,6 +23,8 @@ const AngelEyeUXCaseStudy = () => {
         outcomes,
         nextSteps,
         reflection,
+        sitemap,
+        visualDesign,
     } = ANGELEYE_CASE_STUDY;
 
     const [activeShot, setActiveShot] = useState(screenshots[0].id);
@@ -146,6 +148,91 @@ const AngelEyeUXCaseStudy = () => {
                     </div>
                 </Section>
 
+                <Section title="Sitemap: legacy vs redesign">
+                    <div className="grid md:grid-cols-2 gap-6 mb-5">
+                        <div className="bg-red-50 border border-red-200 rounded-xl p-5">
+                            <h3 className="text-sm font-medium text-red-600 mb-3">
+                                {sitemap.legacy.label}
+                            </h3>
+                            <ul className="space-y-1.5 text-sm">
+                                {sitemap.legacy.nodes.map((node) => (
+                                    <li key={node.label}>
+                                        <span
+                                            className={caseStudyText.secondary}
+                                        >
+                                            {node.label}
+                                        </span>
+                                        {node.children && (
+                                            <ul className="ml-4 mt-1 space-y-1 border-l border-red-200 pl-3">
+                                                {node.children.map((child) => (
+                                                    <li
+                                                        key={child.label}
+                                                        className={`text-xs ${caseStudyText.secondary}`}
+                                                    >
+                                                        {child.label}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                            <h3 className="text-sm font-medium text-emerald-600 mb-3">
+                                {sitemap.redesign.label}
+                            </h3>
+                            <ul className="space-y-1.5 text-sm">
+                                {sitemap.redesign.nodes.map((node) => (
+                                    <li
+                                        key={node.label}
+                                        className={caseStudyText.body}
+                                    >
+                                        {node.label}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                    <p
+                        className={`${caseStudyText.secondary} text-sm leading-relaxed`}
+                    >
+                        {sitemap.note}
+                    </p>
+                </Section>
+
+                <Section title="Visual design: color & system">
+                    <p
+                        className={`${caseStudyText.body} text-base leading-relaxed mb-6`}
+                    >
+                        {visualDesign.intro}
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                        {visualDesign.choices.map((item) => (
+                            <div
+                                key={item.title}
+                                className="flex gap-4 bg-neutral-50 border border-neutral-200 rounded-xl p-5"
+                            >
+                                <span
+                                    className="mt-1 h-8 w-8 flex-shrink-0 rounded-full border border-neutral-200 shadow-sm"
+                                    style={{ backgroundColor: item.swatch }}
+                                    aria-hidden="true"
+                                />
+                                <div>
+                                    <h3 className="text-sm font-semibold text-purple-700 mb-1">
+                                        {item.title}
+                                    </h3>
+                                    <p
+                                        className={`${caseStudyText.secondary} text-sm leading-relaxed`}
+                                    >
+                                        {item.desc}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </Section>
+                
                 <Section title="Approach">
                     <div className="grid md:grid-cols-2 gap-6">
                         {approach.map((item) => (
