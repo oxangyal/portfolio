@@ -38,7 +38,10 @@ const Technologies = () => {
                     animate="animate"
                     className="rounded-2xl border-4 border-neutral-800 p=4"
                 >
-                    <RiReactjsLine className="text-7xl text-cyan-400" />
+                    <RiReactjsLine
+                        aria-hidden="true"
+                        className="text-7xl text-cyan-400"
+                    />
                 </motion.div>
                 <motion.div
                     variants={iconVariants(2)}
@@ -46,7 +49,10 @@ const Technologies = () => {
                     animate="animate"
                     className="rounded-2xl border-4 border-neutral-800 p=4"
                 >
-                    <TbBrandNextjs className="text-7xl text-white-400" />
+                    <TbBrandNextjs
+                        aria-hidden="true"
+                        className="text-7xl text-white"
+                    />
                 </motion.div>
                 <motion.div
                     variants={iconVariants(4)}
@@ -54,7 +60,10 @@ const Technologies = () => {
                     animate="animate"
                     className="rounded-2xl border-4 border-neutral-800 p=4"
                 >
-                    <FaNodeJs className="text-7xl text-green-500" />
+                    <FaNodeJs
+                        aria-hidden="true"
+                        className="text-7xl text-green-500"
+                    />
                 </motion.div>
                 <motion.div
                     variants={iconVariants(6)}
@@ -62,7 +71,10 @@ const Technologies = () => {
                     animate="animate"
                     className="rounded-2xl border-4 border-neutral-800 p=4"
                 >
-                    <SiExpress className="text-7xl text-white-400" />
+                    <SiExpress
+                        aria-hidden="true"
+                        className="text-7xl text-white"
+                    />
                 </motion.div>
                 <motion.div
                     variants={iconVariants(5)}
@@ -86,7 +98,10 @@ const Technologies = () => {
                     animate="animate"
                     className="rounded-2xl border-4 border-neutral-800 p=4"
                 >
-                    <SiMongodb className="text-7xl text-green-400" />
+                    <SiMongodb
+                        aria-hidden="true"
+                        className="text-7xl text-green-400"
+                    />
                 </motion.div>
                 <motion.div
                     variants={iconVariants(4)}
@@ -102,7 +117,10 @@ const Technologies = () => {
                     animate="animate"
                     className="rounded-2xl border-4 border-neutral-800 p=4"
                 >
-                    <SiMui className="text-7xl text-blue-500" />
+                    <SiMui
+                        aria-hidden="true"
+                        className="text-7xl text-blue-500"
+                    />
                 </motion.div>
                 <motion.div
                     variants={iconVariants(4)}

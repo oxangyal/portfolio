@@ -17,8 +17,7 @@ const Navbar = () => {
                 <img
                     src={logo}
                     alt="logo"
-                    mx-2
-                    w-10
+                    className="mx-2"
                     style={{ width: "120px" }}
                 />
             </div>
@@ -69,6 +68,7 @@ const Navbar = () => {
                     href="https://www.linkedin.com/in/oxanamich/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="LinkedIn"
                 >
                     <FaLinkedin />
                 </a>
@@ -76,6 +76,7 @@ const Navbar = () => {
                     href="https://github.com/oxangyal"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="GitHub"
                 >
                     <FaGithub />
                 </a>
@@ -83,6 +84,7 @@ const Navbar = () => {
                     href="https://instagram.com/angeleyelive"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Instagram"
                 >
                     <FaInstagram />
                 </a>

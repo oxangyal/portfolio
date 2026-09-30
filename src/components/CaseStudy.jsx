@@ -20,12 +20,12 @@ export const Section = ({ title, children, className = "" }) => (
 
 export const Shot = ({ image, tone }) => {
     const toneMap = {
-        legacy: { ring: "border-red-200 bg-red-50", label: "text-red-600" },
+        legacy: { ring: "border-red-200 bg-red-50", label: "text-red-700" },
         redesign: {
             ring: "border-emerald-200 bg-emerald-50",
-            label: "text-emerald-600",
+            label: "text-emerald-700",
         },
-        desktop: { ring: "border-sky-200 bg-sky-50", label: "text-sky-600" },
+        desktop: { ring: "border-sky-200 bg-sky-50", label: "text-sky-700" },
         mobile: {
             ring: "border-amber-200 bg-amber-50",
             label: "text-amber-700",
@@ -53,7 +53,7 @@ export const Flow = ({ steps, tone }) => {
         tone === "legacy"
             ? `border-red-200 bg-red-50 ${caseStudyText.secondary}`
             : `border-emerald-200 bg-emerald-50 text-neutral-900`;
-    const arrow = tone === "legacy" ? "text-red-400" : "text-emerald-500";
+    const arrow = tone === "legacy" ? "text-red-600" : "text-emerald-700";
 
     return (
         <div className="flex flex-col md:flex-row md:items-stretch gap-2 flex-wrap md:flex-nowrap">

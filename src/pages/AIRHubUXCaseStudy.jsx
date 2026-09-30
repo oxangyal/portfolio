@@ -36,7 +36,9 @@ const AIRHubUXCaseStudy = () => {
                     <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-3">
                         {title}
                     </h1>
-                    <p className={`text-lg ${caseStudyText.muted} mb-5 max-w-2xl`}>
+                    <p
+                        className={`text-lg ${caseStudyText.muted} mb-5 max-w-2xl`}
+                    >
                         {subtitle}
                     </p>
                     <div className="flex flex-wrap gap-x-8 gap-y-2 text-purple-700 text-sm md:text-base font-medium mb-5">
@@ -45,7 +47,9 @@ const AIRHubUXCaseStudy = () => {
                             {role}
                         </p>
                         <p>
-                            <span className={caseStudyText.label}>Timeline:</span>{" "}
+                            <span className={caseStudyText.label}>
+                                Timeline:
+                            </span>{" "}
                             {timeline}
                         </p>
                         <p>
@@ -55,8 +59,8 @@ const AIRHubUXCaseStudy = () => {
                     </div>
                     <div className="flex flex-wrap gap-3">
                         {liveUrl && (
-                            
-                                <a href={liveUrl}
+                            <a
+                                href={liveUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-4 py-2 rounded-lg text-sm font-medium bg-purple-600 text-white hover:bg-purple-700 transition-colors"
@@ -65,8 +69,8 @@ const AIRHubUXCaseStudy = () => {
                             </a>
                         )}
                         {repoUrl && (
-                            
-                                <a href={repoUrl}
+                            <a
+                                href={repoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-4 py-2 rounded-lg text-sm font-medium border border-neutral-200 text-neutral-700 hover:border-neutral-300 hover:text-neutral-900 transition-colors"
@@ -78,7 +82,9 @@ const AIRHubUXCaseStudy = () => {
                 </motion.header>
 
                 <Section title="Overview">
-                    <p className={`${caseStudyText.body} text-lg leading-relaxed bg-neutral-50 p-6 rounded-xl border border-neutral-200`}>
+                    <p
+                        className={`${caseStudyText.body} text-lg leading-relaxed bg-neutral-50 p-6 rounded-xl border border-neutral-200`}
+                    >
                         {overview}
                     </p>
                 </Section>
@@ -93,7 +99,9 @@ const AIRHubUXCaseStudy = () => {
                                 <h3 className="text-base font-semibold text-red-600 mb-2">
                                     {item.title}
                                 </h3>
-                                <p className={`${caseStudyText.secondary} text-sm leading-relaxed`}>
+                                <p
+                                    className={`${caseStudyText.secondary} text-sm leading-relaxed`}
+                                >
                                     {item.desc}
                                 </p>
                             </div>
@@ -111,7 +119,9 @@ const AIRHubUXCaseStudy = () => {
                                 <h3 className="text-lg font-semibold text-purple-700 mb-2">
                                     {item.title}
                                 </h3>
-                                <p className={`${caseStudyText.secondary} text-sm leading-relaxed`}>
+                                <p
+                                    className={`${caseStudyText.secondary} text-sm leading-relaxed`}
+                                >
                                     {item.desc}
                                 </p>
                             </div>
@@ -145,7 +155,7 @@ const AIRHubUXCaseStudy = () => {
                                         </span>
                                     </span>
                                 </div>
-                                <p className="mt-3 text-xs font-medium text-red-600">
+                                <p className="mt-3 text-xs font-medium text-red-700">
                                     {screenshots.before.caption}
                                 </p>
                             </button>
@@ -170,7 +180,7 @@ const AIRHubUXCaseStudy = () => {
                                         </span>
                                     </span>
                                 </div>
-                                <p className="mt-3 text-xs font-medium text-emerald-600">
+                                <p className="mt-3 text-xs font-medium text-emerald-700">
                                     {screenshots.after.caption}
                                 </p>
                             </button>
@@ -189,14 +199,18 @@ const AIRHubUXCaseStudy = () => {
                                     {point.aspect}
                                 </h3>
                                 <div className="grid md:grid-cols-2 gap-4 text-sm">
-                                    <div className={`bg-red-50 p-3 rounded border border-red-200 ${caseStudyText.secondary}`}>
-                                        <strong className="text-red-600 block mb-1">
+                                    <div
+                                        className={`bg-red-50 p-3 rounded border border-red-200 ${caseStudyText.secondary}`}
+                                    >
+                                        <strong className="text-red-700 block mb-1">
                                             AI Reviewer
                                         </strong>
                                         {point.legacy}
                                     </div>
-                                    <div className={`bg-emerald-50 p-3 rounded border border-emerald-200 ${caseStudyText.body}`}>
-                                        <strong className="text-emerald-600 block mb-1">
+                                    <div
+                                        className={`bg-emerald-50 p-3 rounded border border-emerald-200 ${caseStudyText.body}`}
+                                    >
+                                        <strong className="text-emerald-700 block mb-1">
                                             AIRHub
                                         </strong>
                                         {point.redesign}
@@ -209,10 +223,12 @@ const AIRHubUXCaseStudy = () => {
 
                 <Section title="Outcome">
                     <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-6">
-                        <h3 className="text-lg font-semibold text-emerald-600 mb-3">
+                        <h3 className="text-lg font-semibold text-emerald-700 mb-3">
                             What changed
                         </h3>
-                        <ul className={`space-y-2 text-sm ${caseStudyText.body} leading-relaxed`}>
+                        <ul
+                            className={`space-y-2 text-sm ${caseStudyText.body} leading-relaxed`}
+                        >
                             {outcomes.map((item) => (
                                 <li key={item} className="flex gap-2">
                                     <span
@@ -229,7 +245,9 @@ const AIRHubUXCaseStudy = () => {
                 </Section>
 
                 <Section title="What I took from it">
-                    <blockquote className={`border-l-4 border-purple-500 pl-5 ${caseStudyText.body} text-lg leading-relaxed italic`}>
+                    <blockquote
+                        className={`border-l-4 border-purple-500 pl-5 ${caseStudyText.body} text-lg leading-relaxed italic`}
+                    >
                         {reflection}
                     </blockquote>
                 </Section>

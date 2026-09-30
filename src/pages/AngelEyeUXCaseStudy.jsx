@@ -81,7 +81,7 @@ const AngelEyeUXCaseStudy = () => {
                                 key={item.title}
                                 className="bg-neutral-50 border border-neutral-200 rounded-xl p-5"
                             >
-                                <h3 className="text-base font-semibold text-red-600 mb-2">
+                                <h3 className="text-base font-semibold text-red-700 mb-2">
                                     {item.title}
                                 </h3>
                                 <p
@@ -116,7 +116,7 @@ const AngelEyeUXCaseStudy = () => {
                 <Section title="Stack">
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-red-50 p-6 rounded-xl border border-red-200">
-                            <h3 className="text-xl font-medium text-red-600 mb-4">
+                            <h3 className="text-xl font-medium text-red-700 mb-4">
                                 Legacy build
                             </h3>
                             <ul className="flex flex-wrap gap-2">
@@ -131,7 +131,7 @@ const AngelEyeUXCaseStudy = () => {
                             </ul>
                         </div>
                         <div className="bg-emerald-50 p-6 rounded-xl border border-emerald-200">
-                            <h3 className="text-xl font-medium text-emerald-600 mb-4">
+                            <h3 className="text-xl font-medium text-emerald-700 mb-4">
                                 Redesign
                             </h3>
                             <ul className="flex flex-wrap gap-2">
@@ -151,7 +151,7 @@ const AngelEyeUXCaseStudy = () => {
                 <Section title="Sitemap: legacy vs redesign">
                     <div className="grid md:grid-cols-2 gap-6 mb-5">
                         <div className="bg-red-50 border border-red-200 rounded-xl p-5">
-                            <h3 className="text-sm font-medium text-red-600 mb-3">
+                            <h3 className="text-sm font-medium text-red-700 mb-3">
                                 {sitemap.legacy.label}
                             </h3>
                             <ul className="space-y-1.5 text-sm">
@@ -179,7 +179,7 @@ const AngelEyeUXCaseStudy = () => {
                             </ul>
                         </div>
                         <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
-                            <h3 className="text-sm font-medium text-emerald-600 mb-3">
+                            <h3 className="text-sm font-medium text-emerald-700 mb-3">
                                 {sitemap.redesign.label}
                             </h3>
                             <ul className="space-y-1.5 text-sm">
@@ -232,7 +232,7 @@ const AngelEyeUXCaseStudy = () => {
                         ))}
                     </div>
                 </Section>
-                
+
                 <Section title="Approach">
                     <div className="grid md:grid-cols-2 gap-6">
                         {approach.map((item) => (
@@ -304,13 +304,13 @@ const AngelEyeUXCaseStudy = () => {
                 <Section title="Path to a photograph">
                     <div className="bg-neutral-50 p-5 md:p-6 rounded-xl border border-neutral-200 space-y-6">
                         <div>
-                            <h3 className="text-sm font-medium text-red-600 mb-3">
+                            <h3 className="text-sm font-medium text-red-700 mb-3">
                                 Legacy — {userJourney.legacy.length} steps
                             </h3>
                             <Flow steps={userJourney.legacy} tone="legacy" />
                         </div>
                         <div>
-                            <h3 className="text-sm font-medium text-emerald-600 mb-3">
+                            <h3 className="text-sm font-medium text-emerald-700 mb-3">
                                 Redesign — {userJourney.redesign.length} steps
                             </h3>
                             <Flow
@@ -335,7 +335,7 @@ const AngelEyeUXCaseStudy = () => {
                                     <div
                                         className={`bg-red-50 p-3 rounded border border-red-200 ${caseStudyText.secondary}`}
                                     >
-                                        <strong className="text-red-600 block mb-1">
+                                        <strong className="text-red-700 block mb-1">
                                             Legacy
                                         </strong>
                                         {point.legacy}
@@ -343,7 +343,7 @@ const AngelEyeUXCaseStudy = () => {
                                     <div
                                         className={`bg-emerald-50 p-3 rounded border border-emerald-200 ${caseStudyText.body}`}
                                     >
-                                        <strong className="text-emerald-600 block mb-1">
+                                        <strong className="text-emerald-700 block mb-1">
                                             Redesign
                                         </strong>
                                         {point.redesign}
@@ -357,7 +357,7 @@ const AngelEyeUXCaseStudy = () => {
                 <Section title="Outcome">
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-6">
-                            <h3 className="text-lg font-semibold text-emerald-600 mb-3">
+                            <h3 className="text-lg font-semibold text-emerald-700 mb-3">
                                 What changed
                             </h3>
                             <ul
