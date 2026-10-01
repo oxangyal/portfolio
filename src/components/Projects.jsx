@@ -144,6 +144,23 @@ const Projects = () => {
                                         </Link>
                                     </div>
                                 )}
+                                {project.title === "OYE" && (
+                                    <div>
+                                        <Link
+                                            to="/oye-ux"
+                                            onClick={() =>
+                                                window.scrollTo(0, 0)
+                                            }
+                                            className="text-sm font-medium text-purple-300 hover:text-white bg-purple-950/60 hover:bg-purple-900/80 px-3 py-1 rounded border border-purple-700 transition duration-200 inline-block"
+                                            style={{
+                                                boxShadow:
+                                                    "0 0 8px rgba(168, 85, 247, 0.4)",
+                                            }}
+                                        >
+                                            UX Case Study ✨
+                                        </Link>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

@@ -24,6 +24,8 @@ import newGallery from "../assets/case-studies/angeleye/new-gallery.png";
 import newHome from "../assets/case-studies/angeleye/new-home.png";
 import newPricing from "../assets/case-studies/angeleye/new-pricing.png";
 import oye from "../assets/oye.png";
+import oyeChatNew from "../assets/case-studies/oye/chat-new.png";
+import oyeChatOld from "../assets/case-studies/oye/chat-old.png";
 import player from "../assets/player.jpg";
 import portfolio from "../assets/portfolio.jpg";
 import thrive from "../assets/thrivepr.jpg";
@@ -62,8 +64,17 @@ export const PROJECTS = [
         title: "AIRHub",
         image: airhub,
         description:
-            "A full-stack educational platform built for Code the Dream that delivers AI-powered code review and feedback on student assignments. Features include courses and lessons management, quiz builder, student progress tracking, and an admin dashboard — enabling mentors to automate homework evaluation and focus human review where it matters most. Students can take AI-generated quizzes and track their performance. Integrated Langfuse for monitoring and continuously improving AI response quality, accuracy, and helpfulness.",
-        technologies: ["Next.js", "MUI", "MongoDB", "Langfuse"],
+            "A full-stack educational platform that automates code review and assessment. Students submit their GitHub repositories and receive instant AI-generated feedback on their assignments, take AI-generated quizzes tied to their lessons, and track their quiz performance over time. Admins manage the platform through a dedicated dashboard - configuring cohorts, lessons, and quizzes, and fine-tuning AI behavior through a built-in prompt editor that lets the team update and publish AI instructions without touching code. Langfuse is integrated to monitor every AI response in production, scoring each one for accuracy, helpfulness, and hallucination risk - giving the team a feedback loop to continuously improve output quality.",
+        technologies: [
+            "Next.js",
+            "MUI",
+            "MongoDB",
+            "Langfuse",
+            "OpenAI",
+            "Redis",
+            "BullMQ",
+            "Airtable"
+        ],
         web: "https://ai-review.codethedream.org/",
         front: "https://github.com/CodeTheDream/ai-assignment-review",
         back: "https://github.com/CodeTheDream/ai-assignment-review",
@@ -73,12 +84,13 @@ export const PROJECTS = [
         title: "OYE",
         image: oye,
         description:
-            "An application-to-person (A2P) messaging platform built for nonprofit organizations to communicate with their customers via SMS and MMS. Features include broadcast and individual messaging, contact management with groups and tags, message templates with quick-reply dropdowns, CSV export, and cost estimation — offering a straightforward, mobile-friendly alternative to bloated CMS systems at a lower overall cost.",
+            "A messaging platform built for nonprofit organizations to communicate with their constituents via SMS and MMS, offering a straightforward, mobile-friendly alternative to bloated CMS systems at a lower overall cost. Core features: broadcast and individual messaging, scheduled and recurring campaigns, contact management with groups and tags, CSV import/export, message templates with quick-reply dropdowns, file attachments, cost estimation before sending, and real-time delivery status updates. The platform supports multiple organizations on a single instance, with each organization's contacts, messages, and billing kept fully isolated from the others.",
         technologies: [
-            "React.js",
             "Ruby on Rails",
-            "TailwindCSS",
             "PostgreSQL",
+            "Sidekiq",
+            "Redis",
+            "SignalWire"
         ],
         web: "https://app.oyetext.org/",
         front: "https://github.com/CodeTheDream/oyetext-backend",
@@ -841,6 +853,138 @@ export const AIRHUB_CASE_STUDY = {
 };
 // ---------------------------------------------------------------
 
+
+export const OYE_CASE_STUDY = {
+    title: "OYE",
+    subtitle:
+        "Turning a cramped, cluttered chat window into a full-width conversation, redesigned from inside the dev team",
+    role: "Joined as a developer, then led the chat redesign - UX, UI, implementation",
+    timeline: "~1 month · Code the Dream",
+    client: "Code the Dream",
+    liveUrl: "https://app.oyetext.org/",
+    repoUrl: "https://github.com/CodeTheDream/oyetext-backend",
+
+    overview:
+        "OYE lets nonprofit organizations message their contacts over SMS. The contact-level chat window, where staff actually read and send messages - started out small and cramped. Character count, segment count, and cost sat stacked below the input, and the message color key lived behind its own accordion toggle, so checking what a message color meant took an extra click. I joined the project as a developer and took on redesigning that window.",
+
+    problems: [
+        {
+            title: "The chat window was small",
+            desc: "Messages sat in a cramped column, with most of the page's width unused,  the conversation, the one thing staff came to read, got the least room.",
+        },
+        {
+            title: "Metadata crowded the input",
+            desc: "Character count, segment count, cost per segment, and cost estimate all stacked directly under the message box, pushing the actual conversation further up and out of view.",
+        },
+        {
+            title: "The message color key was hidden behind a click",
+            desc: "The legend explaining chatbot, grouped, outbound, and inbound message colors lived in a collapsed accordion - staff had to open it every time they needed to check what a color meant, instead of it being there when they needed it.",
+        },
+        {
+            title: "The file attachment control was dated",
+            desc: 'Attaching a file meant a text-based "Choose a file / Browse / Clear" control - more steps and more visual weight than a single icon needed.',
+        },
+        {
+            title: "Send was a full text button",
+            desc: 'A labeled "Send" button took up space that a compact icon could fill, in a layout already tight on room.',
+        },
+    ],
+
+    approach: [
+        {
+            title: "Gave the conversation the full width",
+            desc: "Expanded the chat to take up the page's width instead of a narrow column, so messages are the most prominent thing on screen.",
+        },
+        {
+            title: "Moved metadata into a sidebar",
+            desc: "Character count, segments, cost per segment, and cost estimate moved into a right-hand sidebar - visible at a glance, no longer competing with the thread for vertical space.",
+        },
+        {
+            title: "Moved the color key out of the accordion",
+            desc: "Expanded the color key into the sidebar as a persistent reference, next to the cost metadata - no more clicking to open it each time.",
+        },
+        {
+            title: "Replaced the file control with an icon",
+            desc: 'Swapped the three-part "Choose a file / Browse / Clear" control for a single attach icon next to the input - one tap instead of three steps.',
+        },
+        {
+            title: "Collapsed the input into one bar with icon actions",
+            desc: "Message input, attach, and send now live in a single row, with icons instead of a labeled button - closer to how messaging apps people already use every day are laid out.",
+        },
+        {
+            title: "Left room to grow",
+            desc: "Templates (quick-reply messages) were added to the same input bar later, after the redesign shipped - the layout had room for a new icon without needing another pass.",
+        },
+    ],
+
+    screenshots: {
+        before: {
+            src: oyeChatOld,
+            alt: "The original OYE chat window: a narrow message column with character count, segments, cost, and the message color key stacked below the input",
+            caption: "Before",
+        },
+        after: {
+            src: oyeChatNew,
+            alt: "The redesigned OYE chat window: a full-width conversation with metadata and the color key moved into a right sidebar, and a single input bar with icon actions",
+            caption: "Now",
+        },
+    },
+
+    comparisonPoints: [
+        {
+            id: 1,
+            aspect: "Chat width",
+            legacy: "A narrow column, with most of the page's width unused.",
+            redesign:
+                "Full width - the conversation is the most prominent thing on the page.",
+        },
+        {
+            id: 2,
+            aspect: "Metadata (characters, segments, cost)",
+            legacy: "Stacked directly under the input, pushing the conversation up.",
+            redesign:
+                "Moved into a right-hand sidebar, visible without crowding the thread.",
+        },
+        {
+            id: 3,
+            aspect: "Message color key",
+            legacy: "Hidden behind an accordion toggle, an extra click to check what a color meant.",
+            redesign:
+                "Always visible in the sidebar, next to the cost metadata.",
+        },
+        {
+            id: 4,
+            aspect: "File attachment",
+            legacy: 'A text-based "Choose a file / Browse / Clear" control.',
+            redesign: "A single attach icon next to the input.",
+        },
+        {
+            id: 5,
+            aspect: "Send",
+            legacy: "A labeled text button.",
+            redesign: "A compact icon in the same input row.",
+        },
+        {
+            id: 6,
+            aspect: "Growth",
+            legacy: "No room in the layout for new actions without redesigning again.",
+            redesign:
+                "Templates were added to the same input bar later without a redesign.",
+        },
+    ],
+
+    outcomes: [
+        "The conversation itself, not the metadata around it, is now the focal point of the page.",
+        "Reference information (cost, segments, color key) is still visible, just out of the way of the thread.",
+        "Attaching a file and sending a message both dropped from multi-step controls to single icons.",
+        "The input row had enough room to add templates later without another redesign.",
+    ],
+
+    reflection:
+        "This was a smaller redesign than AIRHub, but the same lesson applied: most of what was wrong wasn't the content, it was what that content was competing with for space on the screen. Moving metadata out of the conversation's way, not deleting it, was the actual fix.",
+};
+
+// ---------------------------------------------
 export const CONTACT = {
     address: "Greater Boston Area",
     phoneNo: "(339) 970 0970",
