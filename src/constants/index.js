@@ -34,8 +34,9 @@ import tutor from "../assets/capture.jpg";
 
 // export const HERO_CONTENT = `I'm a creative Full stack developer, known for my adaptability and keen eye for detail. With a wealth of experiences from living in various countries, with a solid foundation in coding and an extensive background in photography, I bring my work with a unique perspective, enriching it with diverse viewpoints and fostering cross-cultural collaboration. I succeed in confronting challenges head-on, frequently opting for unconventional paths to problem-solving. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
 export const HERO_CONTENT = `I'm a creative Full-stack Developer and UX/UI Designer, known for my adaptability and keen eye for detail. My work spans the full product cycle: research, wireframes and interface decisions through to shipped, production code, treating design and engineering as one continuous process rather than a handoff between them. With a wealth of experience living in various countries, a solid foundation in coding, and an extensive background in photography, I bring a unique perspective to every project, enriching it with diverse viewpoints and cross-cultural collaboration. I succeed in confronting challenges head-on, frequently opting for unconventional paths to problem-solving. My goal is to design and build solutions that drive business growth and deliver exceptional user experiences.`;
+
 // export const ABOUT_TEXT = `I'm a dedicated and versatile Full stack developer with a passion for crafting efficient and user-friendly web applications. My journey into web development was sparked by a profound curiosity for understanding how things work, and it has since blossomed into a fulfilling career where I continuously seek to learn and adapt to new challenges. Embracing a wide array of technologies, including but not limited to React, Next.js, Node.js, Express.js, MySQL and MongoDB, I thrive in collaborative environments, leveraging my problem-solving skills to deliver high-quality solutions. Outside of coding, I enjoy my family, reading books, training for triathlon races and contributing to open-source projects.`;
-export const ABOUT_TEXT = `I'm a dedicated Full-stack Developer and UX/UI Designer with a passion for crafting efficient, user-friendly web applications from the first sketch to the shipped product. My journey into web development was sparked by a profound curiosity for understanding how things work, and it has since grown into a practice where design decisions and technical ones inform each other rather than happening in isolation - I research, design and build, so nothing gets lost in translation between them. I work across React, Next.js, Phyton, Ruby on Rails and I thrive in collaborative environments, leveraging both an eye for interface and a problem-solving mindset to deliver high-quality solutions. Outside of coding, I enjoy my family, reading books, training for triathlon races, and contributing to open-source projects.`;
+export const ABOUT_TEXT = `I'm a dedicated Full-stack Developer and UX/UI Designer with a passion for crafting efficient, user-friendly web applications from the first sketch to the shipped product. My journey into web development was sparked by a profound curiosity for understanding how things work, and it has since grown into a practice where design decisions and technical ones inform each other rather than happening in isolation - I research, design and build, so nothing gets lost in translation between them. I work across React, Next.js, Python, Ruby on Rails and I thrive in collaborative environments, leveraging both an eye for interface and a problem-solving mindset to deliver high-quality solutions. Outside of coding, I enjoy my family, reading books, training for triathlon races, and contributing to open-source projects.`;
 export const EXPERIENCES = [
     {
         role: "Software Engineer",
@@ -176,7 +177,7 @@ export const PROJECTS = [
         title: "Thrive Out Loud",
         image: thrive,
         description:
-            "A mentorship platform platform facilitates meaningful connections between mentees and mentors within the LGBTQ+ community. Key features include scheduling online sessions via a calendar and providing dashboards for both mentees and mentors to view their schedules.",
+            "A mentorship platform facilitates meaningful connections between mentees and mentors within the LGBTQ+ community. Key features include scheduling online sessions via a calendar and providing dashboards for both mentees and mentors to view their schedules.",
         technologies: ["CSS", "AntDesign", "Next.js", "Firebase"],
         web: "https://thriveoutloud.vercel.app/",
         front: "https://github.com/Sean-s-Legacy/thrive-out-loud",
@@ -209,7 +210,7 @@ export const ANGELEYE_CASE_STUDY = {
     subtitle:
         "Rebuilding a hand-sliced 2002 photography site as a responsive Next.js product",
     role: "Sole designer & developer - research, UX, UI, fullstack",
-    timeline: "Original site 2002–2016 · Redesign 2024",
+    timeline: "Original site 2002–2016 · Redesign 2023",
     client: "AngelEye Photography (my own studio)",
 
     overview:
@@ -348,7 +349,7 @@ export const ANGELEYE_CASE_STUDY = {
         },
         {
             title: "Rebuilt the highest-impact gallery first",
-            desc: "Weddings carry the business, so that's where the new gallery system launched firs, proving the pattern before expanding it further.",
+            desc: "Weddings carry the business, so that's where the new gallery system launched first, proving the pattern before expanding it further.",
         },
     ],
 
@@ -379,8 +380,8 @@ export const ANGELEYE_CASE_STUDY = {
             note: "A decorative splash with image-based links becomes a full-bleed photograph with a readable statement and a working header.",
             legacy: {
                 src: legacyHome,
-                alt: "2006 AngelEye home page: three sepia thumbnails labelled Weddings, Portraits, Fine Arts",
-                caption: "2006 - category splash, fixed width",
+                alt: "2002 AngelEye home page: three sepia thumbnails labelled Weddings, Portraits, Fine Arts",
+                caption: "2002 - category splash, fixed width",
             },
             redesign: {
                 src: newHome,
@@ -394,8 +395,8 @@ export const ANGELEYE_CASE_STUDY = {
             note: "Four levels of navigation collapse into one scrollable grid that loads more on demand.",
             legacy: {
                 src: legacyGallery,
-                alt: "2006 gallery page with a small thumbnail grid and text links per wedding moment",
-                caption: "2006 - thumbnail index per sub-category",
+                alt: "2002 gallery page with a small thumbnail grid and text links per wedding moment",
+                caption: "2002 - thumbnail index per sub-category",
             },
             redesign: {
                 src: newGallery,
@@ -409,8 +410,8 @@ export const ANGELEYE_CASE_STUDY = {
             note: "The same paragraph, but as live text with real links into Contact instead of a picture of a paragraph.",
             legacy: {
                 src: legacyPricing,
-                alt: "2006 pricing page with handwriting-style text rendered as an image",
-                caption: "2006 - text as an image",
+                alt: "2002 pricing page with handwriting-style text rendered as an image",
+                caption: "2002 - text as an image",
             },
             redesign: {
                 src: newPricing,
@@ -424,8 +425,8 @@ export const ANGELEYE_CASE_STUDY = {
             note: "A phone number becomes a request that already contains the date, duration and location.",
             legacy: {
                 src: legacyContact,
-                alt: "2006 contact page listing a telephone number and email address",
-                caption: "2006 - phone and email only",
+                alt: "2002 contact page listing a telephone number and email address",
+                caption: "2002 - phone and email only",
             },
             redesign: {
                 src: newContact,
@@ -526,7 +527,7 @@ export const LAMORE_CASE_STUDY = {
     subtitle:
         "Turning a two-week take-home assignment into a mobile-first site people actually book from",
     role: "Sole designer & developer - research, UX, UI, frontend",
-    timeline: "2-week take-home assignment · 2026",
+    timeline: "4-week take-home assignment · 2026",
     client: "Personal project, it was originally a technical assignment for a developer interview",
     liveUrl: "https://lamore-alpha.vercel.app/",
     repoUrl: "https://github.com/oxangyal/restaurant-landing",
@@ -703,7 +704,7 @@ export const LAMORE_CASE_STUDY = {
     ],
 
     reflection:
-        "The initial brief asked for a basic business card site, but I wanted to build something people would actually use. To book a table, you need to make a quick decision, right? So you need to see the menu with prices, check out what the place looks like inside, and know exactly where it is.Since most people do this on their phones, I designed everything mobile-first. I made sure the reservation button is always right there on every single screen, so you never have to hunt for it. And instead of just typing out a static address, I dropped in an interactive map. That way, users don't have to copy and paste anything, they can just click, see the route, and instantly decide if they want to go. This project really showed me how much a few smart features can make the whole experience fast and easy for real people.",
+        "The initial brief asked for a basic business card site, but I wanted to build something people would actually use. To book a table, you need to make a quick decision, right? So you need to see the menu with prices, check out what the place looks like inside, and know exactly where it is. Since most people do this on their phones, I designed everything mobile-first. I made sure the reservation button is always right there on every single screen, so you never have to hunt for it. And instead of just typing out a static address, I dropped in an interactive map. That way, users don't have to copy and paste anything, they can just click, see the route, and instantly decide if they want to go. This project really showed me how much a few smart features can make the whole experience fast and easy for real people.",
 };
 
 //----------- AIRHUB_CASE_STUDY----------------------------------------
@@ -713,7 +714,7 @@ export const AIRHUB_CASE_STUDY = {
     subtitle:
         "From a single-purpose Intro reviewer to a multi-course platform, leading the home page redesign and rebrand from inside the dev team",
     role: "Joined as a developer, then led the redesign of the home page and rebrand - research, UX, UI, implementation",
-    timeline: "aroud 6 months · Code the Dream",
+    timeline: "around 6 months · Code the Dream",
     client: "Code the Dream",
     liveUrl: "https://ai-review.codethedream.org/",
     repoUrl: "https://github.com/CodeTheDream/ai-assignment-review",
@@ -849,10 +850,10 @@ export const AIRHUB_CASE_STUDY = {
     ],
 
     reflection:
-        "Although I came on board as a developer, my first big task evolved into a major layout redesign. The inherited structure hadn’t been fully planned out for the long run, and the layout was holding the product back from properly supporting its content.I really enjoyed this process because it wasn't just a visual refresh, it was a puzzle of how to seamlessly fit in courses and features. It required careful balancing to ensure a smooth transition for our existing users while unlocking the platform's new potential.",
+        "Although I came on board as a developer, my first big task evolved into a major layout redesign. The inherited structure hadn’t been fully planned out for the long run, and the layout was holding the product back from properly supporting its content. I really enjoyed this process because it wasn't just a visual refresh, it was a puzzle of how to seamlessly fit in courses and features. It required careful balancing to ensure a smooth transition for our existing users while unlocking the platform's new potential.",
 };
-// ---------------------------------------------------------------
 
+// -----------------OYE_CASE_STUDY-----------------------------------------
 
 export const OYE_CASE_STUDY = {
     title: "OYE",
