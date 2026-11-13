@@ -714,7 +714,7 @@ export const AIRHUB_CASE_STUDY = {
     subtitle:
         "From a single-purpose Intro reviewer to a multi-course platform, leading the home page redesign and rebrand from inside the dev team",
     role: "Joined as a developer, then led the redesign of the home page and rebrand - research, UX, UI, implementation",
-    timeline: "around 6 months · Code the Dream",
+    timeline: "~ 6 months · Code the Dream",
     client: "Code the Dream",
     liveUrl: "https://ai-review.codethedream.org/",
     repoUrl: "https://github.com/CodeTheDream/ai-assignment-review",
@@ -722,24 +722,41 @@ export const AIRHUB_CASE_STUDY = {
     overview:
         "AIRHub started as AI Reviewer, a single-page app built to review one thing: Intro-course assignments. CTD's program already spanned multiple tracks - Python, React, Ruby on Rails, Node courses, but the tool itself only worked for Intro, and there was no way for staff to add a course, adjust it, see how students and mentors were using it, or act on feedback. I joined the project as a developer, and as the platform grew to support every track plus student, mentor and admin roles, I ended up leading the redesign and rebrand of the home page: new navigation, new information architecture, a new name.",
 
+    research: {
+        title: "Research",
+        intro: "I knew this page from the mentor's side. I used AI Reviewer to check my students' work, and while mentoring I asked them how they used it and where they got stuck. Before changes went live, I showed them on our test site and asked for their feedback.",
+        method: "Daily use as a mentor · Interviews with the students I mentored · Feedback on the test site before release",
+        questions: [
+            "How do you check whether your assignment passed?",
+            "What do you do when you get stuck on an assignment?",
+            "Which parts of the page do you actually use?",
+        ],
+        findings: [
+            "The feedback, the reason students opened the tool, was at the very bottom of the page. Reviewing their work, I had to scroll past the code to find it, and my students told me they did the same.",
+            "The chat panel took the most visible spot, but my students rarely used it.",
+            "Students had trouble finding the assignment instructions, which sat in a row of file tabs alongside the project files.",
+        ],
+        conclusion:
+            "As the platform grew, the page had to keep one thing in focus: getting students to their feedback fast.",
+    },
+
     problems: [
         {
             title: "Feedback was barely visible",
-            desc: "The AI's review sat at the bottom of the page, below the fold, the one thing the student actually came for was the easiest thing to miss.",
+            desc: "The AI's review button sat at the bottom of the page, below the fold, the one thing the student actually came for was the easiest thing to miss.",
         },
         {
             title: "Chat took the prime spot for a secondary feature",
             desc: "A chat panel sat in the most visible position, on the right side, for something used far less often than the feedback itself.",
         },
         {
-            title: "File selection was an afterthought",
-            desc: "Choosing which file to review happened in a tiny window squeezed in above the feedback - easy to miss, harder to use once a submission had more than a couple of files.",
+            title: "Instructions were hard to find",
+            desc: "The assignment instructions were one tab in a row of file tabs along the top, mixed in with the project files, with no folder structure. Everything opened in the same small window, too cramped to read the instructions or look through a file comfortably.",
         },
         {
             title: "The structure only worked for one course",
             desc: "CTD already ran multiple tracks - Python, React, Ruby on Rails, Node courses, but the tool was wired to review only Intro assignments. There was no admin layer to manage courses, or see how students and mentors were actually using it, every addition meant rebuilding the page, not configuring it.",
         },
-        ,
     ],
 
     approach: [
@@ -756,20 +773,12 @@ export const AIRHUB_CASE_STUDY = {
             desc: "Chat still exists, but as a secondary tool in the sidebar instead of competing with feedback for the most visible spot on the page.",
         },
         {
-            title: "Made file selection visible",
-            desc: "Moved it out of the cramped strip above feedback and into a clear, dedicated spot on the left, usable even when a submission has several files.",
+            title: "Built a file tree like a code editor",
+            desc: "Files open from a folder tree on the left and their content shows on the right. Instructions come first in the tree, so students find the assignment right away, and folders keep larger projects readable.",
         },
         {
-            title: "Built the sidebar to hold admin tools as they're added",
-            desc: "Chat, Cohorts, Students, Prework Analyzer, Feedback Testing and Langfuse all live in the same left navigation, a pattern that scales as more admin features get added, not a one-off list.",
-        },
-        {
-            title: "Built room for mentor and student roles",
-            desc: "The platform outgrew being a single reviewing tool - mentors need to review submissions and track cohorts, students need to take quizzes and see their own progress. The new navigation gives each its own space instead of forcing everyone through the same single view.",
-        },
-        {
-            title: "Moved Help next to where people actually get stuck",
-            desc: "The Help toggle moved from the bottom of the page to sit right next to the lesson selector and assignment link input, the exact spot where questions about the assignment come up, instead of a fixed nav position unrelated to the task.",
+            title: "One sidebar for every role and tool",
+            desc: "The platform outgrew being a single reviewing tool: students submit work and take quizzes, mentors review submissions and track their cohorts, admins manage courses and tools like the Prework Analyzer, Feedback Testing and Langfuse. Instead of building a separate layout for each role, I designed one left sidebar that shows each role its own set of tools. Adding a role or a tool means adding an item to the same pattern, not building a new view.",
         },
         {
             title: "Kept it desktop-only on purpose",
@@ -812,9 +821,10 @@ export const AIRHUB_CASE_STUDY = {
         },
         {
             id: 5,
-            aspect: "File selection",
-            legacy: "A tiny window squeezed in above feedback.",
-            redesign: "A clear, dedicated area on the left.",
+            aspect: "Instructions and files",
+            legacy: "Instructions were one tab among flat file tabs, with no folder structure.",
+            redesign:
+                "A folder tree on the left with instructions first, and content on the right, like a code editor.",
         },
         {
             id: 6,
@@ -822,13 +832,6 @@ export const AIRHUB_CASE_STUDY = {
             legacy: "No dedicated space; not part of the original design.",
             redesign:
                 "Cohorts, Students, Prework Analyzer, Feedback Testing and Langfuse in a scalable sidebar.",
-        },
-        {
-            id: 7,
-            aspect: "Help",
-            legacy: "A toggle at the bottom of the page, disconnected from the task.",
-            redesign:
-                "Placed next to the lesson selector and assignment input, right where questions actually come up.",
         },
         {
             id: 9,
@@ -845,9 +848,24 @@ export const AIRHUB_CASE_STUDY = {
         "Admin tools have a consistent home that scales as more get added.",
     ],
 
-    nextSteps: [
-        "A Prompt Editor is built but intentionally scoped out of this case study for now.",
-    ],
+    impact: {
+        forWhom: [
+            {
+                group: "Students",
+                value: "Their feedback is visible right after a review runs, in a panel they can read without scrolling, and help sits where they paste their assignment link.",
+            },
+            {
+                group: "Mentors and admins",
+                value: "Each role has its own space, with tools like Cohorts, Students and the Prework Analyzer in one sidebar.",
+            },
+            {
+                group: "Code the Dream",
+                value: "A tool built for one course now serves every track the program runs, from Intro to Python, JavaScript, Node and React. Tracks get added, split or retired as the program changes, and the page doesn't need to change with them.",
+            },
+        ],
+        myValue:
+            "As a mentor, I saw the problems every time I reviewed my students' work and heard them from the students themselves. As a developer, I could build the fixes myself, so what students needed made it into the product without getting lost in a handoff.",
+    },
 
     reflection:
         "Although I came on board as a developer, my first big task evolved into a major layout redesign. The inherited structure hadn’t been fully planned out for the long run, and the layout was holding the product back from properly supporting its content. I really enjoyed this process because it wasn't just a visual refresh, it was a puzzle of how to seamlessly fit in courses and features. It required careful balancing to ensure a smooth transition for our existing users while unlocking the platform's new potential.",

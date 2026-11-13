@@ -5,6 +5,8 @@ import { AIRHUB_CASE_STUDY } from "../constants";
 import ImageLightbox from "../components/ImageLightbox";
 import { motion } from "framer-motion";
 
+const isReal = (text) => Boolean(text) && !text.includes("[TODO");
+
 const AIRHubUXCaseStudy = () => {
     const [lightboxImage, setLightboxImage] = useState(null);
     const {
@@ -16,13 +18,19 @@ const AIRHubUXCaseStudy = () => {
         liveUrl,
         repoUrl,
         overview,
+        research,
         problems,
         approach,
         screenshots,
         comparisonPoints,
         outcomes,
-        reflection,
+        impact,
     } = AIRHUB_CASE_STUDY;
+
+    const findings = (research?.findings || []).filter(isReal);
+    const questions = (research?.questions || []).filter(isReal);
+    const impactGroups = (impact?.forWhom || []).filter((g) => isReal(g.value));
+    const evidence = (impact?.evidence || []).filter(isReal);
 
     return (
         <div className="relative z-10 bg-white text-neutral-800 rounded-2xl shadow-xl shadow-black/20">
@@ -88,6 +96,69 @@ const AIRHubUXCaseStudy = () => {
                         {overview}
                     </p>
                 </Section>
+
+                {/* Research */}
+                {findings.length > 0 && (
+                    <Section title="Research">
+                        <div className="space-y-6">
+                            {isReal(research.intro) && (
+                                <p
+                                    className={`${caseStudyText.body} text-base md:text-lg leading-relaxed max-w-3xl`}
+                                >
+                                    {research.intro}
+                                </p>
+                            )}
+                            {isReal(research.method) && (
+                                <p className={`text-sm ${caseStudyText.muted}`}>
+                                    <span className="font-semibold text-neutral-800">
+                                        Method:{" "}
+                                    </span>
+                                    {research.method}
+                                </p>
+                            )}
+
+                            <div
+                                className={`grid gap-5 ${
+                                    questions.length ? "md:grid-cols-2" : ""
+                                }`}
+                            >
+                                {questions.length > 0 && (
+                                    <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-5">
+                                        <h3 className="text-base font-semibold text-purple-700 mb-3">
+                                            What I asked
+                                        </h3>
+                                        <ol className="space-y-2 list-decimal list-inside text-sm text-neutral-700">
+                                            {questions.map((q) => (
+                                                <li key={q}>{q}</li>
+                                            ))}
+                                        </ol>
+                                    </div>
+                                )}
+                                <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-5">
+                                    <h3 className="text-base font-semibold text-purple-700 mb-3">
+                                        What I found
+                                    </h3>
+                                    <ul className="space-y-2.5 text-sm text-neutral-800 leading-relaxed">
+                                        {findings.map((f) => (
+                                            <li
+                                                key={f}
+                                                className="pl-3 border-l-2 border-purple-300"
+                                            >
+                                                {f}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {isReal(research.conclusion) && (
+                                <p className="text-base font-medium text-neutral-900 max-w-3xl">
+                                    {research.conclusion}
+                                </p>
+                            )}
+                        </div>
+                    </Section>
+                )}
 
                 <Section title="What was wrong">
                     <div className="grid md:grid-cols-2 gap-4">
@@ -244,13 +315,63 @@ const AIRHubUXCaseStudy = () => {
                     </div>
                 </Section>
 
-                <Section title="What I took from it">
-                    <blockquote
-                        className={`border-l-4 border-purple-500 pl-5 ${caseStudyText.body} text-lg leading-relaxed italic`}
-                    >
-                        {reflection}
-                    </blockquote>
-                </Section>
+                {/*  Impact */}
+                {impact && (
+                    <Section title="Impact">
+                        <div className="space-y-8">
+                            {impactGroups.length > 0 && (
+                                <div className="grid md:grid-cols-3 gap-4">
+                                    {impactGroups.map((g) => (
+                                        <div
+                                            key={g.group}
+                                            className="bg-neutral-50 border border-neutral-200 rounded-xl p-5"
+                                        >
+                                            <h3 className="text-base font-semibold text-purple-700 mb-2">
+                                                {g.group}
+                                            </h3>
+                                            <p
+                                                className={`${caseStudyText.body} text-sm leading-relaxed`}
+                                            >
+                                                {g.value}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+
+                            {isReal(impact.myValue) && (
+                                <div className="border-l-4 border-purple-500 pl-5 max-w-3xl">
+                                    <h3 className="text-base font-semibold text-neutral-900 mb-2">
+                                        The value I brought
+                                    </h3>
+                                    <p
+                                        className={`${caseStudyText.body} text-base leading-relaxed`}
+                                    >
+                                        {impact.myValue}
+                                    </p>
+                                </div>
+                            )}
+
+                            {evidence.length > 0 && (
+                                <div>
+                                    <h3 className="text-base font-semibold text-neutral-900 mb-3">
+                                        What users said
+                                    </h3>
+                                    <ul className="space-y-2 text-sm text-neutral-800 leading-relaxed max-w-3xl">
+                                        {evidence.map((e) => (
+                                            <li
+                                                key={e}
+                                                className="pl-3 border-l-2 border-emerald-500"
+                                            >
+                                                {e}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    </Section>
+                )}
             </div>
 
             <ImageLightbox

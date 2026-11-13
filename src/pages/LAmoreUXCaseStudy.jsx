@@ -226,7 +226,7 @@ const LAmoreUXCaseStudy = () => {
                             ))}
                         </div>
                         <div className="mt-1 rounded-lg border border-purple-300 bg-purple-50 px-4 py-3 text-center text-sm font-medium text-purple-700">
-                            Reserve a Table — one tap away from anywhere
+                            Reserve a Table - one tap away from anywhere
                         </div>
                         <p
                             className={`${caseStudyText.secondary} text-sm leading-relaxed mt-4`}
