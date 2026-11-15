@@ -216,11 +216,11 @@ export const ANGELEYE_CASE_STUDY = {
     client: "AngelEye Photography (my own studio)",
 
     overview:
-        "I built the first version of this site in the early 2000s: every page was done in Photoshop, cut, and glued back together with HTML tables and JavaScript rollovers. It served the business for years, but it was a fixed-size picture of a website, text lived inside images, nothing reflowed, and there was no way to inquire or to view a private gallery. The redesign rebuilds the same business around three jobs: look at the work, understand the pricing, and book a date.",
+        "I built the first version of this site in 2002: every page was done in Photoshop, cut, and glued back together with HTML tables and JavaScript rollovers. It served the business for years, but it was a fixed-size picture of a website, text lived inside images, nothing reflowed, and there was no way to inquire or to view a private gallery. The redesign rebuilds the same business around three jobs: look at the work, understand the pricing, and book a date.",
 
     research: {
         title: "Research",
-        intro: "When I ran the studio, I answered every inquiry myself, so I knew from experience where the old site let couples down. For the redesign, I combined that with an audit of every page of the original build.",
+        intro: "I run the studio myself and answer every inquiry personally, so I knew from experience where the old site let couples down. For the redesign, I combined that with an audit of every page of the original build.",
         method: "Experience running the studio · Audit of the original site",
         findings: [
             "Almost every first inquiry arrived without a date, location or duration, so my first reply was always a list of questions.",
@@ -230,6 +230,7 @@ export const ANGELEYE_CASE_STUDY = {
         conclusion:
             "The new site needed to do three things: show the work, explain the pricing, and collect what's needed to book a date.",
     },
+
     problems: [
         {
             title: "Built for one screen size",
@@ -248,8 +249,8 @@ export const ANGELEYE_CASE_STUDY = {
             desc: "Contact was a phone number and an email address. Every inquiry arrived without a date, a location or a duration, so the first reply was always a list of questions.",
         },
         {
-            title: "No private space for clients",
-            desc: '"Client images" existed as a menu item, but delivery happened over email and discs. Couples had nowhere to return to after the wedding.',
+            title: "No secure space for clients",
+            desc: "Delivery meant sending a plain link with the photos - no login, no password. Anyone who had the link could open it, and a couple who lost it had no way back in.",
         },
     ],
 
@@ -324,7 +325,7 @@ export const ANGELEYE_CASE_STUDY = {
                 },
                 { label: "Pricing" },
                 { label: "Contact" },
-                { label: "Client images (dead link)" },
+                { label: "Client images" },
             ],
         },
         redesign: {
@@ -343,7 +344,7 @@ export const ANGELEYE_CASE_STUDY = {
     approach: [
         {
             title: "Audited the old site page by page",
-            desc: "Listed every page, link and image of the 2000 build, then sorted them into keep, rewrite and drop. Philosophy, Pricing and Contact survived as content; the category splash page and thumbnail index pages disappeared into one gallery.",
+            desc: "Listed every page, link and image of the 2002 build, then sorted them into keep, rewrite and drop. Philosophy, Pricing and Contact survived as content; the category splash page and thumbnail index pages disappeared into one gallery.",
         },
         {
             title: "Rewrote the navigation as real links",
