@@ -205,6 +205,8 @@ export const PROJECTS = [
     },
 ];
 
+// -----------------------------------ANGELEYE_CASE_STUDY---------------------------------------
+
 export const ANGELEYE_CASE_STUDY = {
     title: "AngelEye Photography",
     subtitle:
@@ -216,6 +218,18 @@ export const ANGELEYE_CASE_STUDY = {
     overview:
         "I built the first version of this site in the early 2000s: every page was done in Photoshop, cut, and glued back together with HTML tables and JavaScript rollovers. It served the business for years, but it was a fixed-size picture of a website, text lived inside images, nothing reflowed, and there was no way to inquire or to view a private gallery. The redesign rebuilds the same business around three jobs: look at the work, understand the pricing, and book a date.",
 
+    research: {
+        title: "Research",
+        intro: "When I ran the studio, I answered every inquiry myself, so I knew from experience where the old site let couples down. For the redesign, I combined that with an audit of every page of the original build.",
+        method: "Experience running the studio · Audit of the original site",
+        findings: [
+            "Almost every first inquiry arrived without a date, location or duration, so my first reply was always a list of questions.",
+            "Reaching a single wedding photo took four to five page loads, and the fixed 800×600 layout didn't work on a phone at all.",
+            "Photos were delivered as an open link, with no login and no way back in if a couple lost it.",
+        ],
+        conclusion:
+            "The new site needed to do three things: show the work, explain the pricing, and collect what's needed to book a date.",
+    },
     problems: [
         {
             title: "Built for one screen size",
@@ -505,7 +519,7 @@ export const ANGELEYE_CASE_STUDY = {
         "The whole site is usable on a phone, which the original could not be at any size.",
         "Every piece of copy is now real text - searchable, translatable and readable by assistive technology.",
         "Reaching a wedding photograph takes one click instead of four page loads.",
-        "Inquiries arrive with the event details attached, so the first reply can quote instead of ask.",
+        "The inquiry form asks for the event details up front, so a first reply can quote instead of ask.",
         "Client photos now sit behind a login instead of an open link.",
     ],
 
@@ -516,11 +530,27 @@ export const ANGELEYE_CASE_STUDY = {
         "Measure the redesign properly - Lighthouse, inquiry completion rate, mobile share of traffic.",
     ],
 
+    impact: {
+        forWhom: [
+            {
+                group: "Visitors",
+                value: "The site works on any screen, every word is real text that can be read, searched and translated, and a wedding photo is one click away.",
+            },
+            {
+                group: "Couples",
+                value: "Booking starts with a form that asks for the details up front, and their photos live in a private, password-protected gallery.",
+            },
+        ],
+        myValue:
+            "This was my own work from before I moved into development. Rebuilding it let me look at the same site twice: once as the photographer who drew every pixel in Photoshop, and again as a product designer who builds for every screen and every visitor.",
+        evidence: [],
+    },
+
     reflection:
         "The hardest part was not the code. It was accepting that a layout I had drawn pixel by pixel in Photoshop was the thing standing in the way, the design was a picture, and a picture cannot respond, cannot be read aloud and cannot be edited by anyone but its author. Rebuilding it as a system meant giving up total control of every pixel in exchange for a site that adapts to whoever opens it.",
 };
 
-//------------LAMORE_CASE_STUDY----------------------------------
+//---------------------------LAMORE_CASE_STUDY----------------------------------
 
 export const LAMORE_CASE_STUDY = {
     title: "L'Amore Restaurant",
@@ -707,7 +737,7 @@ export const LAMORE_CASE_STUDY = {
         "The initial brief asked for a basic business card site, but I wanted to build something people would actually use. To book a table, you need to make a quick decision, right? So you need to see the menu with prices, check out what the place looks like inside, and know exactly where it is. Since most people do this on their phones, I designed everything mobile-first. I made sure the reservation button is always right there on every single screen, so you never have to hunt for it. And instead of just typing out a static address, I dropped in an interactive map. That way, users don't have to copy and paste anything, they can just click, see the route, and instantly decide if they want to go. This project really showed me how much a few smart features can make the whole experience fast and easy for real people.",
 };
 
-//----------- AIRHUB_CASE_STUDY----------------------------------------
+//-----------------------------AIRHUB_CASE_STUDY----------------------------------------
 
 export const AIRHUB_CASE_STUDY = {
     title: "AIRHub",
@@ -871,7 +901,7 @@ export const AIRHUB_CASE_STUDY = {
         "Although I came on board as a developer, my first big task evolved into a major layout redesign. The inherited structure hadn’t been fully planned out for the long run, and the layout was holding the product back from properly supporting its content. I really enjoyed this process because it wasn't just a visual refresh, it was a puzzle of how to seamlessly fit in courses and features. It required careful balancing to ensure a smooth transition for our existing users while unlocking the platform's new potential.",
 };
 
-// -----------------OYE_CASE_STUDY-----------------------------------------
+// -----------------------------------OYE_CASE_STUDY-----------------------------------------
 
 export const OYE_CASE_STUDY = {
     title: "OYE",
@@ -1044,6 +1074,7 @@ export const OYE_CASE_STUDY = {
 };
 
 // ---------------------------------------------
+
 export const CONTACT = {
     address: "Greater Boston Area",
     phoneNo: "(339) 970 0970",

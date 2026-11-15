@@ -5,6 +5,8 @@ import { ANGELEYE_CASE_STUDY } from "../constants";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import { motion } from "framer-motion";
 
+const isReal = (text) => Boolean(text) && !text.includes("[TODO");
+
 const AngelEyeUXCaseStudy = () => {
     const {
         title,
@@ -13,6 +15,7 @@ const AngelEyeUXCaseStudy = () => {
         timeline,
         client,
         overview,
+        research, 
         problems,
         goals,
         stack,
@@ -22,7 +25,7 @@ const AngelEyeUXCaseStudy = () => {
         comparisonPoints,
         outcomes,
         nextSteps,
-        reflection,
+        impact,
         sitemap,
         visualDesign,
     } = ANGELEYE_CASE_STUDY;
@@ -30,6 +33,9 @@ const AngelEyeUXCaseStudy = () => {
     const [activeShot, setActiveShot] = useState(screenshots[0].id);
     const [sideBySide, setSideBySide] = useState(false);
     const shot = screenshots.find((s) => s.id === activeShot);
+    const findings = (research?.findings || []).filter(isReal);
+    const impactGroups = (impact?.forWhom || []).filter((g) => isReal(g.value));
+    const evidence = (impact?.evidence || []).filter(isReal);
 
     return (
         <div className="relative z-10 bg-white text-neutral-800 rounded-2xl shadow-xl shadow-black/20">
@@ -73,6 +79,49 @@ const AngelEyeUXCaseStudy = () => {
                         {overview}
                     </p>
                 </Section>
+
+                {/* Research */}
+                {findings.length > 0 && (
+                    <Section title={research.title || "Research"}>
+                        <div className="space-y-6">
+                            {isReal(research.intro) && (
+                                <p
+                                    className={`${caseStudyText.body} text-lg leading-relaxed max-w-3xl`}
+                                >
+                                    {research.intro}
+                                </p>
+                            )}
+                            {isReal(research.method) && (
+                                <p className={`text-sm ${caseStudyText.muted}`}>
+                                    <span className="font-semibold text-neutral-800">
+                                        Method:{" "}
+                                    </span>
+                                    {research.method}
+                                </p>
+                            )}
+                            <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-5">
+                                <h3 className="text-lg font-semibold text-purple-700 mb-3">
+                                    What I found
+                                </h3>
+                                <ul className="space-y-2.5 text-sm text-neutral-700 leading-relaxed">
+                                    {findings.map((f) => (
+                                        <li
+                                            key={f}
+                                            className="pl-3 border-l-2 border-purple-300"
+                                        >
+                                            {f}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            {isReal(research.conclusion) && (
+                                <p className="text-lg font-medium text-neutral-900 max-w-3xl">
+                                    {research.conclusion}
+                                </p>
+                            )}
+                        </div>
+                    </Section>
+                )}
 
                 <Section title="What was wrong">
                     <div className="grid md:grid-cols-2 gap-4">
@@ -399,13 +448,63 @@ const AngelEyeUXCaseStudy = () => {
                     </div>
                 </Section>
 
-                <Section title="What I took from it">
-                    <blockquote
-                        className={`border-l-4 border-purple-500 pl-5 ${caseStudyText.body} text-lg leading-relaxed italic`}
-                    >
-                        {reflection}
-                    </blockquote>
-                </Section>
+                {/*  Impact" */}
+                {impact && (
+                    <Section title="Impact">
+                        <div className="space-y-8">
+                            {impactGroups.length > 0 && (
+                                <div className="grid md:grid-cols-3 gap-4">
+                                    {impactGroups.map((g) => (
+                                        <div
+                                            key={g.group}
+                                            className="bg-neutral-50 border border-neutral-200 rounded-xl p-5"
+                                        >
+                                            <h3 className="text-lg font-semibold text-purple-700 mb-2">
+                                                {g.group}
+                                            </h3>
+                                            <p
+                                                className={`${caseStudyText.body} text-sm leading-relaxed`}
+                                            >
+                                                {g.value}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+
+                            {isReal(impact.myValue) && (
+                                <div className="border-l-4 border-purple-500 pl-5 max-w-3xl">
+                                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                                        The value I brought
+                                    </h3>
+                                    <p
+                                        className={`${caseStudyText.body} text-lg leading-relaxed`}
+                                    >
+                                        {impact.myValue}
+                                    </p>
+                                </div>
+                            )}
+
+                            {evidence.length > 0 && (
+                                <div>
+                                    <h3 className="text-lg font-semibold text-neutral-900 mb-3">
+                                        What clients said
+                                    </h3>
+                                    <ul className="space-y-2 text-sm text-neutral-700 leading-relaxed max-w-3xl">
+                                        {evidence.map((e) => (
+                                            <li
+                                                key={e}
+                                                className="pl-3 border-l-2 border-emerald-500"
+                                            >
+                                                {e}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    </Section>
+                )}
             </div>
         </div>
     );
