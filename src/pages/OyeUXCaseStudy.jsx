@@ -5,6 +5,8 @@ import ImageLightbox from "../components/ImageLightbox";
 import { OYE_CASE_STUDY } from "../constants";
 import { motion } from "framer-motion";
 
+const isReal = (text) => Boolean(text) && !text.includes("[TODO");
+
 const OyeUXCaseStudy = () => {
     const [lightboxImage, setLightboxImage] = useState(null);
     const {
@@ -16,13 +18,18 @@ const OyeUXCaseStudy = () => {
         liveUrl,
         repoUrl,
         overview,
+        research,
         problems,
         approach,
         screenshots,
         comparisonPoints,
         outcomes,
-        reflection,
+        impact,
     } = OYE_CASE_STUDY;
+
+    const findings = (research?.findings || []).filter(isReal);
+    const impactGroups = (impact?.forWhom || []).filter((g) => isReal(g.value));
+    const evidence = (impact?.evidence || []).filter(isReal);
 
     return (
         <div className="relative z-10 bg-white text-neutral-800 rounded-2xl shadow-xl shadow-black/20">
@@ -36,7 +43,9 @@ const OyeUXCaseStudy = () => {
                     <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-3">
                         {title}
                     </h1>
-                    <p className={`text-lg ${caseStudyText.muted} mb-5 max-w-2xl`}>
+                    <p
+                        className={`text-lg ${caseStudyText.muted} mb-5 max-w-2xl`}
+                    >
                         {subtitle}
                     </p>
                     <div className="flex flex-wrap gap-x-8 gap-y-2 text-purple-700 text-sm md:text-base font-medium mb-5">
@@ -45,7 +54,9 @@ const OyeUXCaseStudy = () => {
                             {role}
                         </p>
                         <p>
-                            <span className={caseStudyText.label}>Timeline:</span>{" "}
+                            <span className={caseStudyText.label}>
+                                Timeline:
+                            </span>{" "}
                             {timeline}
                         </p>
                         <p>
@@ -55,8 +66,8 @@ const OyeUXCaseStudy = () => {
                     </div>
                     <div className="flex flex-wrap gap-3">
                         {liveUrl && (
-                            
-                                <a href={liveUrl}
+                            <a
+                                href={liveUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-4 py-2 rounded-lg text-sm font-medium bg-purple-600 text-white hover:bg-purple-700 transition-colors"
@@ -65,8 +76,8 @@ const OyeUXCaseStudy = () => {
                             </a>
                         )}
                         {repoUrl && (
-                            
-                                <a href={repoUrl}
+                            <a
+                                href={repoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-4 py-2 rounded-lg text-sm font-medium border border-neutral-200 text-neutral-700 hover:border-neutral-300 hover:text-neutral-900 transition-colors"
@@ -78,10 +89,54 @@ const OyeUXCaseStudy = () => {
                 </motion.header>
 
                 <Section title="Overview">
-                    <p className={`${caseStudyText.body} text-lg leading-relaxed bg-neutral-50 p-6 rounded-xl border border-neutral-200`}>
+                    <p
+                        className={`${caseStudyText.body} text-lg leading-relaxed bg-neutral-50 p-6 rounded-xl border border-neutral-200`}
+                    >
                         {overview}
                     </p>
                 </Section>
+
+                {findings.length > 0 && (
+                    <Section title={research.title || "Research"}>
+                        <div className="space-y-6">
+                            {isReal(research.intro) && (
+                                <p
+                                    className={`${caseStudyText.body} text-lg leading-relaxed max-w-3xl`}
+                                >
+                                    {research.intro}
+                                </p>
+                            )}
+                            {isReal(research.method) && (
+                                <p className={`text-sm ${caseStudyText.muted}`}>
+                                    <span className="font-semibold text-neutral-800">
+                                        Method:{" "}
+                                    </span>
+                                    {research.method}
+                                </p>
+                            )}
+                            <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-5">
+                                <h3 className="text-lg font-semibold text-purple-700 mb-3">
+                                    What I found
+                                </h3>
+                                <ul className="space-y-2.5 text-sm text-neutral-700 leading-relaxed">
+                                    {findings.map((f) => (
+                                        <li
+                                            key={f}
+                                            className="pl-3 border-l-2 border-purple-300"
+                                        >
+                                            {f}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            {isReal(research.conclusion) && (
+                                <p className="text-lg font-medium text-neutral-900 max-w-3xl">
+                                    {research.conclusion}
+                                </p>
+                            )}
+                        </div>
+                    </Section>
+                )}
 
                 <Section title="What was wrong">
                     <div className="grid md:grid-cols-2 gap-4">
@@ -93,7 +148,9 @@ const OyeUXCaseStudy = () => {
                                 <h3 className="text-base font-semibold text-red-700 mb-2">
                                     {item.title}
                                 </h3>
-                                <p className={`${caseStudyText.secondary} text-sm leading-relaxed`}>
+                                <p
+                                    className={`${caseStudyText.secondary} text-sm leading-relaxed`}
+                                >
                                     {item.desc}
                                 </p>
                             </div>
@@ -111,7 +168,9 @@ const OyeUXCaseStudy = () => {
                                 <h3 className="text-lg font-semibold text-purple-700 mb-2">
                                     {item.title}
                                 </h3>
-                                <p className={`${caseStudyText.secondary} text-sm leading-relaxed`}>
+                                <p
+                                    className={`${caseStudyText.secondary} text-sm leading-relaxed`}
+                                >
                                     {item.desc}
                                 </p>
                             </div>
@@ -127,7 +186,9 @@ const OyeUXCaseStudy = () => {
                         <div className="grid md:grid-cols-2 gap-5">
                             <button
                                 type="button"
-                                onClick={() => setLightboxImage(screenshots.before)}
+                                onClick={() =>
+                                    setLightboxImage(screenshots.before)
+                                }
                                 className="text-left rounded-xl border border-red-200 bg-red-50 p-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 group"
                             >
                                 <div className="relative overflow-hidden rounded-lg border border-neutral-200 bg-white">
@@ -150,7 +211,9 @@ const OyeUXCaseStudy = () => {
 
                             <button
                                 type="button"
-                                onClick={() => setLightboxImage(screenshots.after)}
+                                onClick={() =>
+                                    setLightboxImage(screenshots.after)
+                                }
                                 className="text-left rounded-xl border border-emerald-200 bg-emerald-50 p-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 group"
                             >
                                 <div className="relative overflow-hidden rounded-lg border border-neutral-200 bg-white">
@@ -185,13 +248,17 @@ const OyeUXCaseStudy = () => {
                                     {point.aspect}
                                 </h3>
                                 <div className="grid md:grid-cols-2 gap-4 text-sm">
-                                    <div className={`bg-red-50 p-3 rounded border border-red-200 ${caseStudyText.secondary}`}>
+                                    <div
+                                        className={`bg-red-50 p-3 rounded border border-red-200 ${caseStudyText.secondary}`}
+                                    >
                                         <strong className="text-red-700 block mb-1">
                                             Before
                                         </strong>
                                         {point.legacy}
                                     </div>
-                                    <div className={`bg-emerald-50 p-3 rounded border border-emerald-200 ${caseStudyText.body}`}>
+                                    <div
+                                        className={`bg-emerald-50 p-3 rounded border border-emerald-200 ${caseStudyText.body}`}
+                                    >
                                         <strong className="text-emerald-700 block mb-1">
                                             Now
                                         </strong>
@@ -208,10 +275,15 @@ const OyeUXCaseStudy = () => {
                         <h3 className="text-lg font-semibold text-emerald-700 mb-3">
                             What changed
                         </h3>
-                        <ul className={`space-y-2 text-sm ${caseStudyText.body} leading-relaxed`}>
+                        <ul
+                            className={`space-y-2 text-sm ${caseStudyText.body} leading-relaxed`}
+                        >
                             {outcomes.map((item) => (
                                 <li key={item} className="flex gap-2">
-                                    <span className="text-emerald-500" aria-hidden="true">
+                                    <span
+                                        className="text-emerald-500"
+                                        aria-hidden="true"
+                                    >
                                         ◆
                                     </span>
                                     <span>{item}</span>
@@ -221,11 +293,62 @@ const OyeUXCaseStudy = () => {
                     </div>
                 </Section>
 
-                <Section title="What I took from it">
-                    <blockquote className={`border-l-4 border-purple-500 pl-5 ${caseStudyText.body} text-lg leading-relaxed italic`}>
-                        {reflection}
-                    </blockquote>
-                </Section>
+                {impact && (
+                    <Section title="Impact">
+                        <div className="space-y-8">
+                            {impactGroups.length > 0 && (
+                                <div className="grid md:grid-cols-3 gap-4">
+                                    {impactGroups.map((g) => (
+                                        <div
+                                            key={g.group}
+                                            className="bg-neutral-50 border border-neutral-200 rounded-xl p-5"
+                                        >
+                                            <h3 className="text-lg font-semibold text-purple-700 mb-2">
+                                                {g.group}
+                                            </h3>
+                                            <p
+                                                className={`${caseStudyText.body} text-sm leading-relaxed`}
+                                            >
+                                                {g.value}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+
+                            {isReal(impact.myValue) && (
+                                <div className="border-l-4 border-purple-500 pl-5 max-w-3xl">
+                                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                                        The value I brought
+                                    </h3>
+                                    <p
+                                        className={`${caseStudyText.body} text-lg leading-relaxed`}
+                                    >
+                                        {impact.myValue}
+                                    </p>
+                                </div>
+                            )}
+
+                            {evidence.length > 0 && (
+                                <div>
+                                    <h3 className="text-lg font-semibold text-neutral-900 mb-3">
+                                        What users said
+                                    </h3>
+                                    <ul className="space-y-2 text-sm text-neutral-700 leading-relaxed max-w-3xl">
+                                        {evidence.map((e) => (
+                                            <li
+                                                key={e}
+                                                className="pl-3 border-l-2 border-emerald-500"
+                                            >
+                                                {e}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    </Section>
+                )}
             </div>
 
             <ImageLightbox

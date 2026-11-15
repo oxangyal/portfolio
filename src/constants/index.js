@@ -877,19 +877,32 @@ export const OYE_CASE_STUDY = {
     title: "OYE",
     subtitle:
         "Turning a cramped, cluttered chat window into a full-width conversation, redesigned from inside the dev team",
-    role: "Joined as a developer, then led the chat redesign - UX, UI, implementation",
+    role: "Developer on the team; turned a 'make the window bigger' ticket into a full redesign - UX, UI in Figma, implementation",
     timeline: "~1 month · Code the Dream",
     client: "Code the Dream",
     liveUrl: "https://app.oyetext.org/",
     repoUrl: "https://github.com/CodeTheDream/oyetext-backend",
 
     overview:
-        "OYE lets nonprofit organizations message their contacts over SMS. The contact-level chat window, where staff actually read and send messages - started out small and cramped. Character count, segment count, and cost sat stacked below the input, and the message color key lived behind its own accordion toggle, so checking what a message color meant took an extra click. I joined the project as a developer and took on redesigning that window.",
+        "OYE lets nonprofit organizations message their contacts over SMS. The contact-level chat window, where staff read and send messages, had been built before I joined the project. Users complained they couldn't see their messages, and my first ticket was simple: make the message window bigger. Looking at the screen, I saw that size wasn't the only problem. Character count, segment count and cost were stacked under the input, the file control took three steps, and the message color key was hidden behind an accordion. I proposed redesigning the whole window instead, designed it in Figma, and then built it.",
+
+    research: {
+        title: "Research",
+        intro: "The work started with user complaints: staff told us they couldn't see their messages. The ticket I got asked only to make the message window bigger, but when I looked at the screen, the small window was a symptom. The input, the file control and the cost table took most of the space, and the conversation got what was left.",
+        method: "User complaints · Review of the existing chat window",
+        findings: [
+            "Users couldn't see their messages: the conversation area was so short that only about one message fit at a time.",
+            "Most of the space went to the controls under it: a three-part file control and a four-row cost table stacked below the input.",
+            "The message color key sat behind an accordion at the bottom of the page, so checking what a color meant took an extra click.",
+        ],
+        conclusion:
+            "The conversation, the thing staff came to read, had to become the main element on the page, with everything else moved out of its way.",
+    },
 
     problems: [
         {
-            title: "The chat window was small",
-            desc: "Messages sat in a cramped column, with most of the page's width unused,  the conversation, the one thing staff came to read, got the least room.",
+            title: "Users couldn't see their messages",
+            desc: "The conversation area was so short that only about one message fit at a time. Users complained they couldn't see their messages, while the input, the file control and the cost table under it took most of the space.",
         },
         {
             title: "Metadata crowded the input",
@@ -911,8 +924,12 @@ export const OYE_CASE_STUDY = {
 
     approach: [
         {
-            title: "Gave the conversation the full width",
-            desc: "Expanded the chat to take up the page's width instead of a narrow column, so messages are the most prominent thing on screen.",
+            title: "Treated the ticket as a symptom",
+            desc: "The ticket asked for a bigger message window. Instead of only stretching it, I looked at why it was small in the first place and redesigned the whole screen in Figma before building it.",
+        },
+        {
+            title: "Gave the conversation the most space",
+            desc: "Turned the page into two columns and gave the left one, the conversation, most of the width and height, so staff see the message history instead of a single message.",
         },
         {
             title: "Moved metadata into a sidebar",
@@ -932,19 +949,19 @@ export const OYE_CASE_STUDY = {
         },
         {
             title: "Left room to grow",
-            desc: "Templates (quick-reply messages) were added to the same input bar later, after the redesign shipped - the layout had room for a new icon without needing another pass.",
+            desc: "Templates (quick-reply messages) were added to the same input bar later, after the redesign shipped. The old layout had no place to put them; the new one took a third icon without another design pass.",
         },
     ],
 
     screenshots: {
         before: {
             src: oyeChatOld,
-            alt: "The original OYE chat window: a narrow message column with character count, segments, cost, and the message color key stacked below the input",
+            alt: "The original OYE chat window: a short conversation area with room for about one message, with the file control, the cost table and the message color key stacked below the input",
             caption: "Before",
         },
         after: {
             src: oyeChatNew,
-            alt: "The redesigned OYE chat window: a full-width conversation with metadata and the color key moved into a right sidebar, and a single input bar with icon actions",
+            alt: "The redesigned OYE chat window: a tall conversation panel on the left with an input bar of send, attach and template icons, and the color key and cost table in a right sidebar",
             caption: "Now",
         },
     },
@@ -952,10 +969,10 @@ export const OYE_CASE_STUDY = {
     comparisonPoints: [
         {
             id: 1,
-            aspect: "Chat width",
-            legacy: "A narrow column, with most of the page's width unused.",
+            aspect: "Conversation area",
+            legacy: "So short that about one message fit at a time; users complained they couldn't see their messages.",
             redesign:
-                "Full width - the conversation is the most prominent thing on the page.",
+                "A tall conversation panel that shows the history by date, including image attachments.",
         },
         {
             id: 2,
@@ -986,7 +1003,7 @@ export const OYE_CASE_STUDY = {
         {
             id: 6,
             aspect: "Growth",
-            legacy: "No room in the layout for new actions without redesigning again.",
+            legacy: "No room in the layout for new actions like templates.",
             redesign:
                 "Templates were added to the same input bar later without a redesign.",
         },
@@ -998,6 +1015,29 @@ export const OYE_CASE_STUDY = {
         "Attaching a file and sending a message both dropped from multi-step controls to single icons.",
         "The input row had enough room to add templates later without another redesign.",
     ],
+
+    impact: {
+        forWhom: [
+            {
+                group: "Nonprofit staff",
+                value: "The complaint that started the redesign is solved: they see the conversation history, not one message at a time. The color key is always in view, and attaching and sending are single icons, like in the messaging apps they already use.",
+            },
+            {
+                group: "Organizations paying for SMS",
+                value: "Character count, segments and the cost estimate stay visible in the sidebar while staff write, without pushing the conversation out of view.",
+            },
+            {
+                group: "The product team",
+                value: "When templates were added later, they fit into the same input row as a third icon. The old layout had no place to put them.",
+            },
+        ],
+        myValue:
+            "The ticket asked me to make the window bigger. I saw that the real problem was everything competing with the conversation for space, proposed a full redesign, designed it in Figma and built it myself. Nothing was lost between the design and the code, and the new layout left room for templates, which were added later without another redesign.",
+        evidence: [
+            "Users told us the chat became much more comfortable to use: writing messages and seeing attachments is easier than before.",
+            "They found sending easier too, now that send and attach sit in one row with the message input.",
+        ],
+    },
 
     reflection:
         "This was a smaller redesign than AIRHub, but the same lesson applied: most of what was wrong wasn't the content, it was what that content was competing with for space on the screen. Moving metadata out of the conversation's way, not deleting it, was the actual fix.",
