@@ -5,6 +5,8 @@ import { LAMORE_CASE_STUDY } from "../constants";
 import PhoneFrame from "../components/PhoneFrame";
 import { motion } from "framer-motion";
 
+const isReal = (text) => Boolean(text) && !text.includes("[TODO");
+
 const LAmoreUXCaseStudy = () => {
     const {
         title,
@@ -17,16 +19,24 @@ const LAmoreUXCaseStudy = () => {
         overview,
         brief,
         research,
+        researchQuestions, 
+        researchFindings, 
+        researchConclusion, 
         approach,
         screenshots,
         highlights,
         outcomes,
-        reflection,
+        impact, 
         visualDesign,
     } = LAMORE_CASE_STUDY;
 
     const [activeShot, setActiveShot] = useState(screenshots[0].id);
     const shot = screenshots.find((s) => s.id === activeShot);
+
+    const questions = (researchQuestions || []).filter(isReal);
+    const findings = (researchFindings || []).filter(isReal);
+    const impactGroups = (impact?.forWhom || []).filter((g) => isReal(g.value));
+    const evidence = (impact?.evidence || []).filter(isReal);
 
     return (
         <div className="relative z-10 bg-white text-neutral-800 rounded-2xl shadow-xl shadow-black/20">
@@ -137,12 +147,55 @@ const LAmoreUXCaseStudy = () => {
                     </div>
                 </Section>
 
+                {/* Research  */}
                 <Section title="Research">
-                    <blockquote
-                        className={`border-l-4 border-purple-500 pl-5 ${caseStudyText.body} text-lg leading-relaxed italic bg-neutral-50 p-6 rounded-xl`}
-                    >
-                        {research}
-                    </blockquote>
+                    <div className="space-y-6">
+                        <p
+                            className={`${caseStudyText.body} text-lg leading-relaxed max-w-3xl`}
+                        >
+                            {research}
+                        </p>
+
+                        {(questions.length > 0 || findings.length > 0) && (
+                            <div className="grid md:grid-cols-2 gap-5">
+                                {questions.length > 0 && (
+                                    <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-5">
+                                        <h3 className="text-lg font-semibold text-purple-700 mb-3">
+                                            What I asked
+                                        </h3>
+                                        <ol className="space-y-2 list-decimal list-inside text-sm text-neutral-700 leading-relaxed">
+                                            {questions.map((q) => (
+                                                <li key={q}>{q}</li>
+                                            ))}
+                                        </ol>
+                                    </div>
+                                )}
+                                {findings.length > 0 && (
+                                    <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-5">
+                                        <h3 className="text-lg font-semibold text-purple-700 mb-3">
+                                            What I found
+                                        </h3>
+                                        <ul className="space-y-2.5 text-sm text-neutral-700 leading-relaxed">
+                                            {findings.map((f) => (
+                                                <li
+                                                    key={f}
+                                                    className="pl-3 border-l-2 border-purple-300"
+                                                >
+                                                    {f}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {isReal(researchConclusion) && (
+                            <p className="text-lg font-medium text-neutral-900 max-w-3xl">
+                                {researchConclusion}
+                            </p>
+                        )}
+                    </div>
                 </Section>
 
                 <Section title="Key decisions">
@@ -287,6 +340,7 @@ const LAmoreUXCaseStudy = () => {
                         </p>
                     </div>
                 </Section>
+
                 <Section title="More highlights">
                     <div className="grid md:grid-cols-2 gap-6">
                         {highlights.map((item) => (
@@ -333,13 +387,63 @@ const LAmoreUXCaseStudy = () => {
                     </ul>
                 </Section>
 
-                <Section title="What I took from it">
-                    <blockquote
-                        className={`border-l-4 border-purple-500 pl-5 ${caseStudyText.body} text-lg leading-relaxed italic`}
-                    >
-                        {reflection}
-                    </blockquote>
-                </Section>
+                {/* Impact */}
+                {impact && (
+                    <Section title="Impact">
+                        <div className="space-y-8">
+                            {impactGroups.length > 0 && (
+                                <div className="grid md:grid-cols-3 gap-4">
+                                    {impactGroups.map((g) => (
+                                        <div
+                                            key={g.group}
+                                            className="bg-neutral-50 border border-neutral-200 rounded-xl p-5"
+                                        >
+                                            <h3 className="text-lg font-semibold text-purple-700 mb-2">
+                                                {g.group}
+                                            </h3>
+                                            <p
+                                                className={`${caseStudyText.body} text-sm leading-relaxed`}
+                                            >
+                                                {g.value}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+
+                            {isReal(impact.myValue) && (
+                                <div className="border-l-4 border-purple-500 pl-5 max-w-3xl">
+                                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                                        The value I brought
+                                    </h3>
+                                    <p
+                                        className={`${caseStudyText.body} text-lg leading-relaxed`}
+                                    >
+                                        {impact.myValue}
+                                    </p>
+                                </div>
+                            )}
+
+                            {evidence.length > 0 && (
+                                <div>
+                                    <h3 className="text-lg font-semibold text-neutral-900 mb-3">
+                                        Feedback
+                                    </h3>
+                                    <ul className="space-y-2 text-sm text-neutral-700 leading-relaxed max-w-3xl">
+                                        {evidence.map((e) => (
+                                            <li
+                                                key={e}
+                                                className="pl-3 border-l-2 border-emerald-500"
+                                            >
+                                                {e}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    </Section>
+                )}
             </div>
         </div>
     );

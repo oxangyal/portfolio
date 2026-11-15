@@ -556,23 +556,20 @@ export const ANGELEYE_CASE_STUDY = {
 export const LAMORE_CASE_STUDY = {
     title: "L'Amore Restaurant",
     subtitle:
-        "Turning a two-week take-home assignment into a mobile-first site people actually book from",
+        "Turning a narrow take-home brief into a mobile-first booking experience, shaped by three quick user interviews",
     role: "Sole designer & developer - research, UX, UI, frontend",
-    timeline: "4-week take-home assignment · 2026",
+    timeline: "3-week take-home assignment · 2026",
     client: "Personal project, it was originally a technical assignment for a developer interview",
     liveUrl: "https://lamore-alpha.vercel.app/",
     repoUrl: "https://github.com/oxangyal/restaurant-landing",
 
     overview:
-        "This started as a take-home assignment while interviewing for a developer role. The brief was narrow: a digital business card for a restaurant, show the menu with prices, let people book a table, nothing more. Mobile was called out as the priority. I used the four weeks to also test what a brief like that usually leaves out.",
+        "This started as a take-home assignment while interviewing for a developer role. The brief was narrow: a digital business card for a restaurant, show the menu with prices, let people book a table, nothing more. I also looked at what a brief like that leaves out: what people actually need to know before they book a table somewhere new, and the fact that most of them do it on a phone.",
 
     brief: {
-        required: [
-            "Table reservation form",
-            "Menu with prices",
-            "Mobile-first layout",
-        ],
+        required: ["Table reservation form", "Menu with prices"],
         added: [
+            "A mobile-first layout",
             "Testimonials with a featured review",
             "An atmosphere / interior gallery",
             "An interactive map for location",
@@ -581,7 +578,7 @@ export const LAMORE_CASE_STUDY = {
     },
 
     research:
-        "I'm part of a book club where picking a meeting spot every few weeks is always a negotiation — eight people, all with different budgets, dietary needs, and vibe preferences. Before writing a single line of code, I asked three members a few questions about how they actually decide where to book a place they haven't been to before.",
+        "I'm part of a book club where picking a meeting spot every few weeks is always a negotiation - eight people, all with different budgets, dietary needs, and vibe preferences. Before writing a single line of code, I asked three members a few questions about how they actually decide where to book a place they haven't been to before.",
 
     researchQuestions: [
         "What's the first thing you check before agreeing to a new restaurant?",
@@ -590,13 +587,13 @@ export const LAMORE_CASE_STUDY = {
     ],
 
     researchFindings: [
-        "Pricing needed to be visible up front — nobody wanted to call just to ask.",
+        "Pricing needed to be visible up front - nobody wanted to call just to ask.",
         "Seeing the room mattered, especially when booking for a group with different expectations.",
         "A stranger's experience carried more weight than the restaurant's own description of itself.",
     ],
 
     researchConclusion:
-        "The original brief didn't cover any of this. The interior gallery and testimonials weren't extra features — they were answers to what people actually needed to know before they'd commit.",
+        "The original brief didn't cover any of this. The interior gallery and testimonials weren't extra features - they were answers to what people actually needed to know before they'd commit.",
 
     approach: [
         {
@@ -617,7 +614,7 @@ export const LAMORE_CASE_STUDY = {
         },
         {
             title: "Built mobile first, not mobile-adapted",
-            desc: "Navigation collapses into a burger menu, the Reserve CTA stays pinned, and the gallery becomes swipeable, it was designed for a phone first, then scaled up.",
+            desc: "The brief didn't ask for it, but most people book a table on their phone, so I designed for the phone first and scaled up. Navigation collapses into a burger menu, the Reserve CTA stays pinned, and the gallery becomes swipeable.",
         },
         {
             title: "Made location a decision, not a lookup",
@@ -731,8 +728,28 @@ export const LAMORE_CASE_STUDY = {
         "Answers the three things someone actually needs before booking somewhere new: what's on the menu, what it looks like, and whether others vouch for it.",
         "The Reserve CTA is reachable in one tap from any screen, on any device.",
         "Mobile isn't a shrunk-down desktop - navigation, CTA placement and the gallery were designed for a phone first.",
-        "Delivered inside the 4-week assignment window while going beyond its minimum scope.",
+        "Went beyond the brief's minimum scope, adding what people need to decide and book.",
     ],
+
+    impact: {
+        forWhom: [
+            {
+                group: "Diners deciding where to go",
+                value: "The three things people check before booking somewhere new, the menu with prices, what the room looks like and whether others vouch for it, are answered on one site.",
+            },
+            {
+                group: "Phone-first guests",
+                value: "The Reserve button is one tap away on every screen, and the map opens straight into their maps app, right when they're about to leave.",
+            },
+            {
+                group: "The restaurant",
+                value: "Instead of a digital business card, a site built to turn a visit into a booking.",
+            },
+        ],
+        myValue:
+            "The brief asked for a business card. Before writing any code, I asked real people how they decide where to book, and their answers shaped the scope: the gallery and testimonials came from that research, not from the brief. I chose to design mobile first because that's where people book, then designed and built the whole site myself.",
+        
+    },
 
     reflection:
         "The initial brief asked for a basic business card site, but I wanted to build something people would actually use. To book a table, you need to make a quick decision, right? So you need to see the menu with prices, check out what the place looks like inside, and know exactly where it is. Since most people do this on their phones, I designed everything mobile-first. I made sure the reservation button is always right there on every single screen, so you never have to hunt for it. And instead of just typing out a static address, I dropped in an interactive map. That way, users don't have to copy and paste anything, they can just click, see the route, and instantly decide if they want to go. This project really showed me how much a few smart features can make the whole experience fast and easy for real people.",
