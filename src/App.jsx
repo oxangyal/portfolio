@@ -1,4 +1,11 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import {
+    BrowserRouter,
+    Link,
+    Route,
+    Routes,
+    useLocation,
+} from "react-router-dom";
+import React, { useEffect } from "react";
 
 import AIRHubUXCaseStudy from "./pages/AIRHubUXCaseStudy";
 import About from "./components/About";
@@ -10,24 +17,35 @@ import LAmoreUXCaseStudy from "./pages/LAmoreUXCaseStudy";
 import Navbar from "../src/components/Navbar";
 import OyeUXCaseStudy from "./pages/OyeUXCaseStudy";
 import Projects from "./components/Projects";
-import React from "react";
 import Technologies from "./components/Technologies";
 
-const Home = () => (
-    <>
-        <Hero />
-        <About />
-        <Technologies />
-        <Experience />
-        <Projects />
-        <Contact />
-    </>
-);
+const Home = () => {
+    const { hash } = useLocation();
+
+    useEffect(() => {
+        if (!hash) return;
+        const element = document.querySelector(hash);
+        if (element) {
+            requestAnimationFrame(() => element.scrollIntoView());
+        }
+    }, [hash]);
+
+    return (
+        <>
+            <Hero />
+            <About />
+            <Technologies />
+            <Experience />
+            <Projects />
+            <Contact />
+        </>
+    );
+};
 
 function App() {
     return (
         <BrowserRouter>
-            <div className="overflow-x-hidden bg-neutral-950 text-neutral-100 antialiased selection:bg-cyan-300 selection:text-cyan-900">
+            <div className="overflow-x-clip bg-neutral-950 text-neutral-100 antialiased selection:bg-cyan-300 selection:text-cyan-900">
                 <div className="fixed top-0 -z-10 h-full w-full">
                     <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
                 </div>
