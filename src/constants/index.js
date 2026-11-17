@@ -761,7 +761,7 @@ export const AIRHUB_CASE_STUDY = {
     title: "AIRHub",
     subtitle:
         "From a single-purpose Intro reviewer to a multi-course platform, leading the home page redesign and rebrand from inside the dev team",
-    role: "Joined as a developer, then led the redesign of the home page and rebrand - research, UX, UI, implementation",
+    role: "Developer and UX lead – research, UX, UI, implementation",
     timeline: "~ 6 months · Code the Dream",
     client: "Code the Dream",
     liveUrl: "https://ai-review.codethedream.org/",
